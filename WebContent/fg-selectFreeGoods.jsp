@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.GoodsForm"%>
 <jsp:useBean id="goods" scope="page" class="com.wy.dao.GoodsDao"/>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>µç×ÓÉÌ³Ç</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç”µå­å•†åŸ</title>
 </head>
 <link href="css/css.css" rel="stylesheet" type="text/css"> 
 <%List freeList =(List)request.getAttribute("list");%>
@@ -13,9 +13,9 @@
 int number=Integer.parseInt((String)request.getAttribute("number"));
 int maxPage=Integer.parseInt((String)request.getAttribute("maxPage"));
 int pageNumber=Integer.parseInt((String)request.getAttribute("pageNumber"));
-int start=number*4;//¿ªÊ¼ÌõÊı
-int over=(number+1)*4;//½áÊøÌõÊı
-int count=pageNumber-over;//»¹Ê£¶àÉÙÌõ¼ÇÂ¼
+int start=number*4;//å¼€å§‹æ¡æ•°
+int over=(number+1)*4;//ç»“æŸæ¡æ•°
+int count=pageNumber-over;//è¿˜å‰©å¤šå°‘æ¡è®°å½•
 if(count<=0){
   over=pageNumber;
   }
@@ -25,7 +25,7 @@ if(count<=0){
 <table width="766" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="207" valign="top" bgcolor="#F5F5F5">
-    <!--×ó²à01-->
+    <!--å·¦ä¾§01-->
     <jsp:include page="fg-left.jsp" flush="true"/></td>
     <td width="559" valign="top" bgcolor="#FFFFFF" align="center">
     	<jsp:include page="fg-goodSorts.jsp" flush="true"/>	
@@ -54,18 +54,18 @@ if(count<=0){
                 <td width="64%" height="30"><div align="center"><%=freeGoods.getName()%></div></td>
               </tr>
               <tr>
-                <td height="30"><div align="center" style="text-decoration:line-through;color:#FF0000">Ô­¼Û£º<%=freeGoods.getNowPrice()%>Ôª</div></td>
+                <td height="30"><div align="center" style="text-decoration:line-through;color:#FF0000">åŸä»·ï¼š<%=freeGoods.getNowPrice()%>å…ƒ</div></td>
               </tr>
 			     <tr>
-                <td height="30"><div align="center">ÌØ¼Û£º<%=freeGoods.getFreePrice()%>Ôª</div></td>
+                <td height="30"><div align="center">ç‰¹ä»·ï¼š<%=freeGoods.getFreePrice()%>å…ƒ</div></td>
               </tr>
               <tr>
                 <td height="30"><div align="center"><%=freeGoods.getIntroduce()%></div></td>
               </tr>
               <tr>
                <td height="30" align="center">  <%if(session.getAttribute("form")!=null||session.getAttribute("id")!=null){%>
-               <a href="#" onClick="window.open('goodsAction.do?action=16&id=<%=freeGoods.getId()%>','','width=500,height=200');">²é¿´ÏêÏ¸ÄÚÈİ</a>				
-			  <%}else{%>µÇÂ¼ºó²ÅÄÜ¹ºÂò<%}%></td>
+               <a href="#" onClick="window.open('goodsAction.do?action=16&id=<%=freeGoods.getId()%>','','width=500,height=200');">æŸ¥çœ‹è¯¦ç»†å†…å®¹</a>				
+			  <%}else{%>ç™»å½•åæ‰èƒ½è´­ä¹°<%}%></td>
               </tr>
             </table>
 			<%}%><br>
@@ -73,19 +73,19 @@ if(count<=0){
 		    <div align="center">
 		      <table width="90%"  border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr align="center">
-                  <td width="13%">¹²Îª<%=maxPage%>Ò³</td>
-                  <td width="18%">¹²ÓĞ<%=pageNumber%>Ìõ¼ÇÂ¼</td>
-                  <td width="26%">µ±Ç°ÎªµÚ<%=number+1%>Ò³</td>
+                  <td width="13%">å…±ä¸º<%=maxPage%>é¡µ</td>
+                  <td width="18%">å…±æœ‰<%=pageNumber%>æ¡è®°å½•</td>
+                  <td width="26%">å½“å‰ä¸ºç¬¬<%=number+1%>é¡µ</td>
                   <td width="15%"><%if((number+1)==1){%>
-      ÉÏÒ»Ò³
+      ä¸Šä¸€é¡µ
         <%}else{%>
-        <a href="goodsAction.do?action=15&mark=1&i=<%=number-1%>">ÉÏÒ»Ò³</a></td>
+        <a href="goodsAction.do?action=15&mark=1&i=<%=number-1%>">ä¸Šä¸€é¡µ</a></td>
                   <%}%>
                   <td width="14%"><%if(maxPage<=(number+1)){%>
-      ÏÂÒ»Ò³
+      ä¸‹ä¸€é¡µ
         <%}else{%>
-        <a href="goodsAction.do?action=15&mark=1&i=<%=number+1%>">ÏÂÒ»Ò³</a></td>
-                  <%}%><td width="14%"><div align="center"><a href="#" onClick="javasrcipt:history.go(-1);">·µ»Ø</a></div></td>
+        <a href="goodsAction.do?action=15&mark=1&i=<%=number+1%>">ä¸‹ä¸€é¡µ</a></td>
+                  <%}%><td width="14%"><div align="center"><a href="#" onClick="javasrcipt:history.go(-1);">è¿”å›</a></div></td>
                 </tr>
 				
               </table>	</td>

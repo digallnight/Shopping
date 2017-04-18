@@ -1,16 +1,16 @@
-package com.wy.domain;
+ï»¿package com.wy.domain;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import javax.servlet.http.HttpServletRequest;
-//ÉÌÆ·Ğ¡Àà±ğbean
+//å•†å“å°ç±»åˆ«bean
 public class SmallTypeForm
     extends ActionForm {
-  private Integer bigId=Integer.valueOf("-1");//ÉÌÆ·´óÀà±ğ±íµÄÍâ¼ü
-  private String creaTime="";//´´½¨Ê±¼ä
-  private Integer id=Integer.valueOf("-1");//Êı¾İ¿âÁ÷Ë®ºÅ
-  private String smallName="";//ÉÌÆ·Ğ¡Àà±ğĞÅÏ¢
+  private Integer bigId=Integer.valueOf("-1");//å•†å“å¤§ç±»åˆ«è¡¨çš„å¤–é”®
+  private String creaTime="";//åˆ›å»ºæ—¶é—´
+  private Integer id=Integer.valueOf("-1");//æ•°æ®åº“æµæ°´å·
+  private String smallName="";//å•†å“å°ç±»åˆ«ä¿¡æ¯
   public Integer getBigId() {
     return bigId;
   }

@@ -1,7 +1,7 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
   <script Language="JavaScript">
  function quit() {
-  if(confirm("È·¶¨ÒªÍË³öºóÌ¨Âğ£¿")){
+  if(confirm("ç¡®å®šè¦é€€å‡ºåå°å—ï¼Ÿ")){
     window.location.href="loginOut.jsp";
 	}
   }
@@ -20,7 +20,7 @@
         <tr>
           <td><table width="118" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
-              <td width="118" height="17" align="center" valign="bottom"><div align="left"><a href="goodsAction.do?action=0" class="a3">ÉÌÆ·ÉèÖÃ</a></div></td>
+              <td width="118" height="17" align="center" valign="bottom"><div align="left"><a href="goodsAction.do?action=0" class="a3">å•†å“è®¾ç½®</a></div></td>
             </tr>
             <tr>
               <td height="17" align="center"><div align="left"><font color="#FFFFFF">Goods Manage</font></div></td>
@@ -32,7 +32,7 @@
         <tr>
           <td><table width="118" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="109" height="17" align="center" valign="bottom"><div align="left"><a href="memberAction.do?action=2" class="a3">»áÔ±ÉèÖÃ</a></div></td>
+                <td width="109" height="17" align="center" valign="bottom"><div align="left"><a href="memberAction.do?action=2" class="a3">ä¼šå‘˜è®¾ç½®</a></div></td>
               </tr>
               <tr>
                 <td height="17" align="center"><div align="left"><font color="#FFFFFF">Member Manage</font></div></td>
@@ -47,7 +47,7 @@
           <td><div align="left">
             <table width="118" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="managerAction.do?action=1" class="a3">ºóÌ¨¹ÜÀíÔ±ÉèÖÃ</a></div></td>
+                  <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="managerAction.do?action=1" class="a3">åå°ç®¡ç†å‘˜è®¾ç½®</a></div></td>
                 </tr>
                 <tr>
                   <td height="17" align="center"><div align="left"><font color="#FFFFFF">Admin Manage</font></div></td>
@@ -62,7 +62,7 @@
           <td><div align="left">
             <table width="118" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="bg-managerUpdatePassword.jsp" class="a3">ĞŞ¸ÄÃÜÂë</a></div></td>
+                  <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="bg-managerUpdatePassword.jsp" class="a3">ä¿®æ”¹å¯†ç </a></div></td>
                 </tr>
                 <tr>
                   <td height="17" align="center"><div align="left"><font color="#FFFFFF">Amend Password</font></div></td>
@@ -83,7 +83,7 @@
         <tr>
           <td><table width="118" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="orderAction.do?action=0" class="a3">¶©µ¥ÉèÖÃ</a></div></td>
+                <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="orderAction.do?action=0" class="a3">è®¢å•è®¾ç½®</a></div></td>
               </tr>
               <tr>
                 <td height="17" align="center"><div align="left"><font color="#FFFFFF">Order Manage</font></div></td>
@@ -95,7 +95,7 @@
         <tr>
           <td><table width="118" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="afficheAction.do?action=0" class="a3">¹«¸æÉèÖÃ</a></div></td>
+                <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="afficheAction.do?action=0" class="a3">å…¬å‘Šè®¾ç½®</a></div></td>
               </tr>
               <tr>
                 <td height="17" align="center"><div align="left"><font color="#FFFFFF">Placard Manage</font></div></td>
@@ -107,7 +107,7 @@
         <tr>
           <td><table width="118" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="linkAction.do?action=0" class="a3">ÓÑÇéÉèÖÃ</a></div></td>
+                <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="linkAction.do?action=0" class="a3">å‹æƒ…è®¾ç½®</a></div></td>
               </tr>
               <tr>
                 <td height="17" align="center"><div align="left"><font color="#FFFFFF">Link Manage</font></div></td>
@@ -119,7 +119,7 @@
         <tr>
           <td><table width="118" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="javascript:quit()" class="a3">°²È«ÍË³ö</a></div></td>
+                <td width="127" height="17" align="center" valign="bottom"><div align="left"><a href="javascript:quit()" class="a3">å®‰å…¨é€€å‡º</a></div></td>
               </tr>
               <tr>
                 <td height="17" align="center"><div align="left"><font color="#FFFFFF">Exit Background</font></div></td>

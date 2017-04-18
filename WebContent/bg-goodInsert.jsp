@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.BigTypeForm"%>
@@ -8,8 +8,8 @@
 <%
 List bigList=big.selectBig();
 String id=(String)request.getAttribute("bigId");
-if(id==null||id.equals("")){			//µ±idÖµÎª¿ÕÊ±£¬ÉèÖÃidÖµÎª-1
-id="-1";					//µ±idÖµÎª¿ÕÊ±£¬Ã»ÓĞÑ¡ÔñÈÎºÎÒ»¸öÉÌÆ·´óÀà±ğÃû³Æ£¬Òò´Ë²»»á³öÏÖÉÌÆ·Ğ¡Àà±ğÃû³Æ
+if(id==null||id.equals("")){			//å½“idå€¼ä¸ºç©ºæ—¶ï¼Œè®¾ç½®idå€¼ä¸º-1
+id="-1";					//å½“idå€¼ä¸ºç©ºæ—¶ï¼Œæ²¡æœ‰é€‰æ‹©ä»»ä½•ä¸€ä¸ªå•†å“å¤§ç±»åˆ«åç§°ï¼Œå› æ­¤ä¸ä¼šå‡ºç°å•†å“å°ç±»åˆ«åç§°
 }
 
 
@@ -20,12 +20,12 @@ List smallList=small.selectOneBigId(bigId);
 function checkEmpty(form){
 for(i=0;i<form.length;i++){
 if(form.elements[i].value==""){
-alert("±íµ¥ĞÅÏ¢²»ÄÜÎª¿Õ");
+alert("è¡¨å•ä¿¡æ¯ä¸èƒ½ä¸ºç©º");
 return false;
 }
 }
 if(isNaN(document.form.nowPirce.value)){
-window.alert("¼Û¸ñÖ»ÄÜÎªÊı×Ö");
+window.alert("ä»·æ ¼åªèƒ½ä¸ºæ•°å­—");
 return false;
 }
 }
@@ -37,8 +37,8 @@ window.location.href="goodsAction.do?action=2&bigId="+big;
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>µç×ÓÉÌ³ÇµÄºóÌ¨</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç”µå­å•†åŸçš„åå°</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css">
 <body>
@@ -50,7 +50,7 @@ window.location.href="goodsAction.do?action=2&bigId="+big;
 	
         <table width="610" height="25" border="0" cellpadding="0" cellspacing="0" background="image/bg_02.jpg">
           <tr>
-            <td><div align="center"><strong>Ìí¼ÓÉÌÆ·ĞÅÏ¢</strong></div></td>
+            <td><div align="center"><strong>æ·»åŠ å•†å“ä¿¡æ¯</strong></div></td>
           </tr>
         </table>
         <br>
@@ -58,9 +58,9 @@ window.location.href="goodsAction.do?action=2&bigId="+big;
   <form action="goodsAction.do?action=3" method="post" enctype="multipart/form-data"  name="form" onSubmit="return checkEmpty(form)" >
         <table width="90%"  border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#CCCCCC">
           <tr>
-            <td width="20%" height="26">&nbsp;&nbsp;ËùÊô´óÀà±ğ</td>
+            <td width="20%" height="26">&nbsp;&nbsp;æ‰€å±å¤§ç±»åˆ«</td>
             <td width="31%" bgcolor="#FFFFFF">&nbsp;&nbsp;
-              <select name="big" onChange="ChangeItem()"><option value="">ÇëÑ¡Ôñ</option>
+              <select name="big" onChange="ChangeItem()"><option value="">è¯·é€‰æ‹©</option>
           <%for(int i=0;i<bigList.size();i++){
             BigTypeForm bigForm=(BigTypeForm)bigList.get(i);
             %>
@@ -71,9 +71,9 @@ window.location.href="goodsAction.do?action=2&bigId="+big;
 		  </option>
             <%}%>
             </select></td>
-            <td width="20%">&nbsp;&nbsp;ËùÊôÓÚĞ¡Àà±ğ</td>
+            <td width="20%">&nbsp;&nbsp;æ‰€å±äºå°ç±»åˆ«</td>
             <td width="31%" bgcolor="#FFFFFF">&nbsp;
-              <select name="small"><option value="">ÇëÑ¡Ôñ</option>
+              <select name="small"><option value="">è¯·é€‰æ‹©</option>
              <%for(int i=0;i<smallList.size();i++){
                SmallTypeForm smallForm=(SmallTypeForm)smallList.get(i);
                %>
@@ -83,31 +83,31 @@ window.location.href="goodsAction.do?action=2&bigId="+big;
             </select></td>
           </tr>
           <tr>
-            <td height="25">&nbsp;&nbsp;ÉÌÆ·Ãû³Æ</td>
+            <td height="25">&nbsp;&nbsp;å•†å“åç§°</td>
             <td bgcolor="#FFFFFF">&nbsp;&nbsp;
             <input name="name" type="text" size="20"></td>
-            <td>&nbsp;&nbsp;Éú²ú³§ÉÌ</td>
+            <td>&nbsp;&nbsp;ç”Ÿäº§å‚å•†</td>
             <td bgcolor="#FFFFFF">&nbsp;
             <input name="from" type="text" size="20"></td>
           </tr>
           <tr>
-            <td height="27">&nbsp;&nbsp;ÉÌÆ·¶¨¼Û</td>
+            <td height="27">&nbsp;&nbsp;å•†å“å®šä»·</td>
             <td bgcolor="#FFFFFF">&nbsp;&nbsp;
             <input name="nowPirce" type="text" size="20"></td>
-            <td>&nbsp;&nbsp;³õÊ¼»¯ÌØ¼Û</td>
+            <td>&nbsp;&nbsp;åˆå§‹åŒ–ç‰¹ä»·</td>
             <td bgcolor="#FFFFFF">&nbsp;
-            <input name="freePirce" type="hidden" size="20" value="0">0Ôª</td>
+            <input name="freePirce" type="hidden" size="20" value="0">0å…ƒ</td>
           </tr>
 		  
 		  <tr>
-            <td height="28">&nbsp;&nbsp;ÉÌÆ·Í¼Æ¬</td>
+            <td height="28">&nbsp;&nbsp;å•†å“å›¾ç‰‡</td>
             <td colspan="3" bgcolor="#FFFFFF">&nbsp;&nbsp;
             <input name="formFile" type="file" id="formFile"></td>
           </tr>
 		  
 		  
           <tr>
-            <td height="28">&nbsp;&nbsp;¼ò½é</td>
+            <td height="28">&nbsp;&nbsp;ç®€ä»‹</td>
             <td colspan="3" bgcolor="#FFFFFF">&nbsp;&nbsp;
             <input name="introduce" type="text" size="50"></td>
           </tr>

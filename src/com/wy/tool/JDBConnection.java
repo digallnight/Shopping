@@ -3,18 +3,18 @@ package com.wy.tool;
 import java.sql.*;
 
 public class JDBConnection {
-	private String dbDriver = "com.mysql.jdbc.Driver"; // Êı¾İ¿âµÄÇı¶¯
+	private String dbDriver = "com.mysql.jdbc.Driver"; // æ•°æ®åº“çš„é©±åŠ¨
 
-	private String url = "jdbc:mysql://localhost:3306/db_shopping"; // URLµØÖ·
+	private String url = "jdbc:mysql://localhost:3306/db_shopping?useUnicode=true&characterEncoding=UTF-8"; // URLåœ°å€
 
 	public Connection connection = null;
 
 	public JDBConnection() {
 		try {
-			Class.forName(dbDriver).newInstance(); // ¼ÓÔØÊı¾İ¿âÇı¶¯
-			connection = DriverManager.getConnection(url, "root", "0000"); // ¼ÓÔØÊı¾İ¿â
+			Class.forName(dbDriver).newInstance(); // åŠ è½½æ•°æ®åº“é©±åŠ¨
+			connection = DriverManager.getConnection(url, "root", "123456"); // åŠ è½½æ•°æ®åº“
 		} catch (Exception ex) {
-			System.out.println("Êı¾İ¿â¼ÓÔØÊ§°Ü");
+			System.out.println("æ•°æ®åº“åŠ è½½å¤±è´¥");
 		}
 	}
 }

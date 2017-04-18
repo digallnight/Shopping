@@ -6,17 +6,17 @@ import java.util.*;
 import com.wy.tool.JDBConnection;
 import com.wy.domain.LinkForm;
 
-//¶ÔÓÑÇéÁ¬½ÓÍøÕ¾±íµÄ²Ù×÷
+//å¯¹å‹æƒ…è¿æ¥ç½‘ç«™è¡¨çš„æ“ä½œ
 public class LinkDao {
-  private Connection connection = null; //¶¨ÒåÁ¬½ÓµÄ¶ÔÏó
-  private PreparedStatement ps = null; //¶¨ÒåÔ¤×¼±¸µÄ¶ÔÏó
-  private JDBConnection jdbc = null; //¶¨ÒåÊı¾İ¿âÁ¬½Ó¶ÔÏó
+  private Connection connection = null; //å®šä¹‰è¿æ¥çš„å¯¹è±¡
+  private PreparedStatement ps = null; //å®šä¹‰é¢„å‡†å¤‡çš„å¯¹è±¡
+  private JDBConnection jdbc = null; //å®šä¹‰æ•°æ®åº“è¿æ¥å¯¹è±¡
   public LinkDao() {
     jdbc = new JDBConnection();
-    connection = jdbc.connection; //ÀûÓÃ¹¹Ôì·½·¨È¡µÃÊı¾İ¿âÁ¬½Ó
+    connection = jdbc.connection; //åˆ©ç”¨æ„é€ æ–¹æ³•å–å¾—æ•°æ®åº“è¿æ¥
   }
 
-  //É¾³ıµÄ·½·¨
+  //åˆ é™¤çš„æ–¹æ³•
   public void deleteLink(Integer id) {
     try {
       ps = connection.prepareStatement("delete from tb_link where id=?");
@@ -31,7 +31,7 @@ public class LinkDao {
 
 
 
-//Ìí¼ÓµÄ·½·¨
+//æ·»åŠ çš„æ–¹æ³•
   public void insertLink(LinkForm form) {
     try {
       ps = connection.prepareStatement("insert into tb_link values (null,?,?)");
@@ -48,7 +48,7 @@ public class LinkDao {
 
 
 
-//È«²¿²éÑ¯µÄ·½·¨
+//å…¨éƒ¨æŸ¥è¯¢çš„æ–¹æ³•
   public List selectLink() {
     List list = new ArrayList();
     LinkForm link = null;

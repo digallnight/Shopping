@@ -7,7 +7,7 @@ import org.apache.struts.upload.FormFile;
 
 import javax.servlet.http.HttpServletRequest;
 
-//ÉÌÆ·bean
+//å•†å“bean
 public class GoodsForm extends ActionForm {
 	private Integer big;
 

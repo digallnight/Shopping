@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>电子商城</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>鐢靛瓙鍟嗗煄</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css"> 
 <body>

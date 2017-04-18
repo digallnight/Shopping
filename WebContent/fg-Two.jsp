@@ -1,18 +1,18 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@page import="com.wy.domain.MemberForm"%>
 <jsp:useBean id="dao" scope="page" class="com.wy.dao.MemberDao"/>
 <%MemberForm form=dao.selectMemberForm(request.getParameter("name"));%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>电子商城</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>鐢靛瓙鍟嗗煄</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css"> 
 <script language="javascript">
 function checkEmpty(form){
 for(i=0;i<form.length;i++){
 if(form.elements[i].value==""){
-alert("表单信息不能为空");
+alert("琛ㄥ崟淇℃伅涓嶈兘涓虹┖");
 return false;
 }
 }
@@ -30,15 +30,15 @@ return false;
   
   
     <%if(form==null||form.equals("")){%>
- <p><strong>不存在此会员名称,请重新输入！！！</strong></p>
+ <p><strong>涓嶅瓨鍦ㄦ浼氬憳鍚嶇О,璇烽噸鏂拌緭鍏ワ紒锛侊紒</strong></p>
  <meta http-equiv="refresh" content="3;URL=findOne.jsp">
   <%}else{%>
-  <p><strong>输入答案</strong></p>
+  <p><strong>杈撳叆绛旀</strong></p>
   <form name="form" method="post" action="fg-three.jsp" onSubmit="return checkEmpty(form)">
     <table width="298"  border="0" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bordercolordark="#819BBC" bordercolorlight="#FFFFFF">
       <tr>
         <td width="105" height="35">
-          <div align="right">问题:</div></td>
+          <div align="right">闂:</div></td>
         <td width="187"><div align="left">
             <input type="hidden" name="name" value="<%=form.getName()%>">
             <input type="hidden" name="question" value="<%=form.getQuestion()%>">
@@ -47,7 +47,7 @@ return false;
       </tr>
        <tr>
         <td width="105" height="35">
-          <div align="right">答案:</div></td>
+          <div align="right">绛旀:</div></td>
         <td width="187">
           <div align="left">
             <input type="text" name="result">

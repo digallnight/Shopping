@@ -5,20 +5,20 @@ import java.sql.*;
 import java.util.*;
 import com.wy.domain.SmallTypeForm;
 
-//¶ÔÉÌÆ·Ğ¡Àà±ğĞÅÏ¢µÄ²Ù×÷
+//å¯¹å•†å“å°ç±»åˆ«ä¿¡æ¯çš„æ“ä½œ
 public class SmallTypeDao {
-	private Connection connection = null; // ¶¨ÒåÁ¬½ÓµÄ¶ÔÏó
+	private Connection connection = null; // å®šä¹‰è¿æ¥çš„å¯¹è±¡
 
-	private PreparedStatement ps = null; // ¶¨ÒåÔ¤×¼±¸µÄ¶ÔÏó
+	private PreparedStatement ps = null; // å®šä¹‰é¢„å‡†å¤‡çš„å¯¹è±¡
 
-	private JDBConnection jdbc = null; // ¶¨ÒåÊı¾İ¿âÁ¬½Ó¶ÔÏó
+	private JDBConnection jdbc = null; // å®šä¹‰æ•°æ®åº“è¿æ¥å¯¹è±¡
 
 	public SmallTypeDao() {
 		jdbc = new JDBConnection();
-		connection = jdbc.connection; // ÀûÓÃ¹¹Ôì·½·¨È¡µÃÊı¾İ¿âÁ¬½Ó
+		connection = jdbc.connection; // åˆ©ç”¨æ„é€ æ–¹æ³•å–å¾—æ•°æ®åº“è¿æ¥
 	}
 
-	// ÒÔĞ¡Àà±ğÍâ¹Ø¼üÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+	// ä»¥å°ç±»åˆ«å¤–å…³é”®ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
 	public List selectOneBigId(Integer bigId) {
 		List list = new ArrayList();
 		SmallTypeForm small = null;
@@ -41,7 +41,7 @@ public class SmallTypeDao {
 		return list;
 	}
 
-	// ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯Ğ¡Àà±ğµÄÃû³Æ
+	// ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢å°ç±»åˆ«çš„åç§°
 	public String selectName(Integer id) {
 		String name = null;
 		try {
@@ -58,7 +58,7 @@ public class SmallTypeDao {
 		return name;
 	}
 
-	// É¾³ı²Ù×÷
+	// åˆ é™¤æ“ä½œ
 	public boolean deleteSmall(Integer id) {
 		try {
 			ps = connection.prepareStatement("delete from tb_smallType where id=?");
@@ -72,7 +72,7 @@ public class SmallTypeDao {
 		}
 	}
 
-	// ĞŞ¸Ä²Ù×÷
+	// ä¿®æ”¹æ“ä½œ
 	public void updateSmall(SmallTypeForm form) {
 		try {
 			ps = connection.prepareStatement("update tb_smallType set bigId=?,smallName=? where id=?");
@@ -86,7 +86,7 @@ public class SmallTypeDao {
 		}
 	}
 
-	// Ìí¼Ó²Ù×÷
+	// æ·»åŠ æ“ä½œ
 	public void insertSmall(SmallTypeForm form) {
 		try {
 			ps = connection.prepareStatement("insert into tb_smallType values (null,?,?,now())");
@@ -99,7 +99,7 @@ public class SmallTypeDao {
 		}
 	}
 
-	// ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+	// ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
 	public SmallTypeForm selectOneBig(Integer id) {
 		SmallTypeForm small = null;
 		try {
@@ -120,7 +120,7 @@ public class SmallTypeDao {
 		return small;
 	}
 
-	// È«²¿²éÑ¯µÄ²Ù×÷
+	// å…¨éƒ¨æŸ¥è¯¢çš„æ“ä½œ
 	public List selectSmall() {
 		List list = new ArrayList();
 		SmallTypeForm small = null;

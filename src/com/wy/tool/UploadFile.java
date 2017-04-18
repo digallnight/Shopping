@@ -7,16 +7,16 @@ import org.apache.struts.upload.FormFile;
 public class UploadFile {
 	public String upload(String dir, FormFile formFile) throws Exception {
 		Date date = new Date();
-		// È¡ÓûÉÏ´«µÄÎÄ¼şµÄÃû×ÖºÍ³¤¶È
+		// å–æ¬²ä¸Šä¼ çš„æ–‡ä»¶çš„åå­—å’Œé•¿åº¦
 		String fname = formFile.getFileName();
-		// ½«ÉÏ´«Ê±¼ä¼ÓÈëÎÄ¼şÃû
+		// å°†ä¸Šä¼ æ—¶é—´åŠ å…¥æ–‡ä»¶å
 		int i = fname.indexOf(".");
 		String name = String.valueOf(date.getTime());
 		String type = fname.substring(i + 1);
 		fname = name + "." + type;
-		InputStream streamIn = formFile.getInputStream(); // ´´½¨¶ÁÈ¡ÓÃ»§ÉÏ´«ÎÄ¼şµÄ¶ÔÏó
-		File uploadFile = new File(dir); // ´´½¨°ÑÉÏ´«Êı¾İĞ´µ½Ä¿±êÎÄ¼şµÄ¶ÔÏó
-		if (!uploadFile.exists() || uploadFile == null) { // ÅĞ¶ÏÖ¸¶¨Â·¾¶ÊÇ·ñ´æÔÚ£¬²»´æÔÚÔò´´½¨Â·¾¶
+		InputStream streamIn = formFile.getInputStream(); // åˆ›å»ºè¯»å–ç”¨æˆ·ä¸Šä¼ æ–‡ä»¶çš„å¯¹è±¡
+		File uploadFile = new File(dir); // åˆ›å»ºæŠŠä¸Šä¼ æ•°æ®å†™åˆ°ç›®æ ‡æ–‡ä»¶çš„å¯¹è±¡
+		if (!uploadFile.exists() || uploadFile == null) { // åˆ¤æ–­æŒ‡å®šè·¯å¾„æ˜¯å¦å­˜åœ¨ï¼Œä¸å­˜åœ¨åˆ™åˆ›å»ºè·¯å¾„
 			uploadFile.mkdirs();
 		}
 		String path = uploadFile.getPath() + "/" + fname;

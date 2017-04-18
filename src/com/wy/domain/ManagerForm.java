@@ -3,15 +3,15 @@ package com.wy.domain;
 
 import org.apache.struts.action.*;
 import javax.servlet.http.HttpServletRequest;
-//¹ÜÀíÔ±bean
+//ç®¡ç†å‘˜bean
 public class ManagerForm
     extends ActionForm {
-  private String account="";//¹ÜÀíÔ±ÕËºÅ
-  private Integer id=Integer.valueOf("-1");//Êı¾İ¿âÁ÷Ë®ºÅ
-  private String name="";//¹ÜÀíÔ±Ãû³Æ
-  private String password="";//¹ÜÀíÔ±µÇÂ¼ÃÜÂë
-  private Integer sigh=Integer.valueOf("-1");//¹ÜÀíÔ±±êÊ¶£¨1£ºÊÇ¡¢0·ñ£©
- //¹¹Ôì·½·¨
+  private String account="";//ç®¡ç†å‘˜è´¦å·
+  private Integer id=Integer.valueOf("-1");//æ•°æ®åº“æµæ°´å·
+  private String name="";//ç®¡ç†å‘˜åç§°
+  private String password="";//ç®¡ç†å‘˜ç™»å½•å¯†ç 
+  private Integer sigh=Integer.valueOf("-1");//ç®¡ç†å‘˜æ ‡è¯†ï¼ˆ1ï¼šæ˜¯ã€0å¦ï¼‰
+ //æ„é€ æ–¹æ³•
   public ManagerForm(){}
 
 

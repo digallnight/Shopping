@@ -12,7 +12,7 @@ import com.wy.dao.OrderDao;
 import com.wy.dao.OrderDetailDao;
 import java.util.List;
 
-//ºóÌ¨¶©µ¥¹ÜÀíµÄAction
+//åå°è®¢å•ç®¡ç†çš„Action
 public class OrderAction
     extends Action {
   private int action;
@@ -27,23 +27,23 @@ public class OrderAction
     orderDetail = new OrderDetailDao();
     switch (action) {
       case 0: {
-        return selectOrder(mapping, form, request, response); //²éÑ¯ËùÓĞµÄ¶©µ¥
+        return selectOrder(mapping, form, request, response); //æŸ¥è¯¢æ‰€æœ‰çš„è®¢å•
       }
       case 1: {
-        return selectOrderSend(mapping, form, request, response); //³ö»õ
+        return selectOrderSend(mapping, form, request, response); //å‡ºè´§
       }
       case 2: {
-      return deleteOrder(mapping, form, request, response); //É¾³ı²Ù×÷
+      return deleteOrder(mapping, form, request, response); //åˆ é™¤æ“ä½œ
     }
     case 3: {
-        return selectOneOrder(mapping, form, request, response); //²éÑ¯¶©µ¥µÄÏêÏ¸ĞÅÏ¢
+        return selectOneOrder(mapping, form, request, response); //æŸ¥è¯¢è®¢å•çš„è¯¦ç»†ä¿¡æ¯
       }
 
     }
     throw new java.lang.UnsupportedOperationException(
         "Method $execute() not yet implemented.");
   }
-//²éÑ¯¶©µ¥µÄÏêÏ¸ĞÅÏ¢
+//æŸ¥è¯¢è®¢å•çš„è¯¦ç»†ä¿¡æ¯
   public ActionForward selectOneOrder(ActionMapping mapping,
                                    ActionForm form,
                                    HttpServletRequest request,
@@ -53,7 +53,7 @@ public class OrderAction
    request.setAttribute("orderDetailList",orderDetail.selectOrderDetailNumber(number));
    return mapping.findForward("selectOneOrder");
   }
-//É¾³ı³ö»õĞÅÏ¢
+//åˆ é™¤å‡ºè´§ä¿¡æ¯
   public ActionForward deleteOrder(ActionMapping mapping,
                                    ActionForm form,
                                    HttpServletRequest request,
@@ -64,7 +64,7 @@ public class OrderAction
     return selectOrder(mapping, form, request, response);
    }
 
-//³ö»õ
+//å‡ºè´§
   public ActionForward selectOrderSend(ActionMapping mapping,
                                        ActionForm form,
                                        HttpServletRequest request,
@@ -73,7 +73,7 @@ public class OrderAction
     return selectOrder(mapping, form, request, response);
   }
 
-  //²éÑ¯ËùÓĞµÄ¶©µ¥
+  //æŸ¥è¯¢æ‰€æœ‰çš„è®¢å•
   public ActionForward selectOrder(ActionMapping mapping,
                                    ActionForm form,
                                    HttpServletRequest request,
@@ -83,8 +83,8 @@ public class OrderAction
       sign = Integer.valueOf(request.getParameter("sign"));
     }
     List list = order.selectOrderSign(sign);
-    int pageNumber = list.size(); //¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-    int maxPage = pageNumber; //¼ÆËãÓĞ¶àÉÙÒ³Êı
+    int pageNumber = list.size(); //è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+    int maxPage = pageNumber; //è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
     String number = request.getParameter("i");
     if (maxPage % 6 == 0) {
       maxPage = maxPage / 6;

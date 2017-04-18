@@ -13,7 +13,7 @@ public class SelfRequestProcessor extends RequestProcessor {
 			HttpServletResponse response) {
 		super.processPreprocess(request, response);
 		try {
-			request.setCharacterEncoding("gb2312");
+			request.setCharacterEncoding("utf-8");
 		} catch (UnsupportedEncodingException ex) {
 			ex.printStackTrace();
 		}

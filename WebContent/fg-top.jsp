@@ -1,9 +1,9 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <%@page import="com.wy.domain.MemberForm"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>нч╠ЙлБнд╣╣</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Ф≈═Ф═┤И╒≤Ф√┤Ф║ё</title>
 </head>
 <%
   String memberlink="connection.jsp";
@@ -23,8 +23,8 @@
     <td width="627">&nbsp;</td>
     <td width="139" valign="top"><table width="125" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td width="70" height="23" valign="bottom"><font color="#FFFFFF"><a href="#" class="a4">╪РлЕжпнд</a></font></td>
-        <td width="55" valign="bottom"><font color="#FFFFFF"><a href="#" class="a4">╥╠лЕжпнд</a></font></td>
+        <td width="70" height="23" valign="bottom"><font color="#FFFFFF"><a href="#" class="a4">Г╝─Д╫⌠Д╦╜Ф√┤</a></font></td>
+        <td width="55" valign="bottom"><font color="#FFFFFF"><a href="#" class="a4">Г╧│Д╫⌠Д╦╜Ф√┤</a></font></td>
       </tr>
     </table></td>
   </tr>
@@ -36,14 +36,14 @@
 </table>
 <table width="766" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#819BBC" background="image/fg_top03.jpg">
       <tr align="center">
-        <td width="117" height="31" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="index.jsp" class="a4">йврЁ</a></td>
-        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="bg-resultTen.jsp" class="a4">оЗйшеепп</a></td>
-        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="goodsAction.do?action=14&mark=0" class="a4">пбф╥ио╪э</a></td>
-        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="goodsAction.do?action=15&mark=1" class="a4">ль╪шилф╥</a></td>
-        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="<%=orderlink%>" class="a4">╡И©╢╤╘╣╔</a></td>
-        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="<%=shoppinglink%>" class="a4">╧╨нОЁ╣</a></td>
-        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="<%=memberlink%>" class="a4">╩Ат╠пч╦д</a></td>
-        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="#" onclick="this.style.behavior='url(#default#homepage)';this.sethomepage('http://www.mingrisoft.com')" class="a4">иХн╙йврЁ</a></td>
+        <td width="117" height="31" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="index.jsp" class="a4">И╕√И║╣</a></td>
+        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="bg-resultTen.jsp" class="a4">И■─Е■╝Ф▌▓Х║▄</a></td>
+        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="goodsAction.do?action=14&mark=0" class="a4">Ф√╟Е⌠│Д╦┼Ф·╤</a></td>
+        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="goodsAction.do?action=15&mark=1" class="a4">Г┴╧Д╩╥Е∙├Е⌠│</a></td>
+        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="<%=orderlink%>" class="a4">Ф÷╔Г°▀Х╝╒Е█∙</a></td>
+        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="<%=shoppinglink%>" class="a4">Х╢╜Г┴╘Х╫╕</a></td>
+        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="<%=memberlink%>" class="a4">Д╪ Е▒≤Д©╝Ф■╧</a></td>
+        <td width="117" onMouseOver="this.style.backgroundImage='url(image/fg_top04.jpg)'" onMouseOut="this.style.backgroundImage=''"><a href="#" onclick="this.style.behavior='url(#default#homepage)';this.sethomepage('http://www.mingrisoft.com')" class="a4">Х╝╬Д╦╨И╕√И║╣</a></td>
       </tr>	
 </table>
 <table width="766" border="0" align="center" cellpadding="0" cellspacing="0">

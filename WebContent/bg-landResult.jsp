@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 
 <html>
 <head>
  <link href="../css/css.css" rel="stylesheet" type="text/css">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>登录结果</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>鐧诲綍缁撴灉</title>
 </head>
 
 <body>

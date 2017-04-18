@@ -3,7 +3,7 @@ package com.wy.domain;
 import javax.servlet.http.*;
 
 import org.apache.struts.action.*;
-//订货明细表的bean
+//璁㈣揣鏄庣粏琛ㄧ殑bean
 public class OrderDetailForm
     extends ActionForm {
   private Integer goodsId;

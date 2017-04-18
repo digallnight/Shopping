@@ -5,17 +5,17 @@ import java.sql.*;
 import java.util.*;
 import com.wy.domain.OrderForm;
 
-//¶©»õ±íµÄ²Ù×÷
+//è®¢è´§è¡¨çš„æ“ä½œ
 public class OrderDao {
-  private Connection connection = null; //¶¨ÒåÁ¬½ÓµÄ¶ÔÏó
-  private PreparedStatement ps = null; //¶¨ÒåÔ¤×¼±¸µÄ¶ÔÏó
-  private JDBConnection jdbc = null; //¶¨ÒåÊı¾İ¿âÁ¬½Ó¶ÔÏó
+  private Connection connection = null; //å®šä¹‰è¿æ¥çš„å¯¹è±¡
+  private PreparedStatement ps = null; //å®šä¹‰é¢„å‡†å¤‡çš„å¯¹è±¡
+  private JDBConnection jdbc = null; //å®šä¹‰æ•°æ®åº“è¿æ¥å¯¹è±¡
   public OrderDao() {
     jdbc = new JDBConnection();
-    connection = jdbc.connection; //ÀûÓÃ¹¹Ôì·½·¨È¡µÃÊı¾İ¿âÁ¬½Ó
+    connection = jdbc.connection; //åˆ©ç”¨æ„é€ æ–¹æ³•å–å¾—æ•°æ®åº“è¿æ¥
   }
 
-//Ç°Ì¨¶©»õ²éÑ¯
+//å‰å°è®¢è´§æŸ¥è¯¢
   public List selectOrderHead(String name) {
   List list=new ArrayList();
     OrderForm order = null;
@@ -48,7 +48,7 @@ public class OrderDao {
 
 
 
-  //ÒÔ¶©»õ±àºÅÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+  //ä»¥è®¢è´§ç¼–å·ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
   public OrderForm selectOrderNumber(String number) {
 
     OrderForm order = null;
@@ -78,7 +78,7 @@ public class OrderDao {
     return order;
   }
 
-  //³ö»õ²Ù×÷
+  //å‡ºè´§æ“ä½œ
   public void updateSignOrder(String number) {
     try {
       ps = connection.prepareStatement("update tb_order set sign=1 where number=?");
@@ -92,7 +92,7 @@ public class OrderDao {
 
   }
 
-//É¾³ı¶©»õĞÅÏ¢
+//åˆ é™¤è®¢è´§ä¿¡æ¯
   public boolean deleteOrder(String number) {
     try {
       ps = connection.prepareStatement("delete from tb_order where number=?");
@@ -108,7 +108,7 @@ public class OrderDao {
 
   }
 
-//ÒÔ¶©»õ±ê¼ÇÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+//ä»¥è®¢è´§æ ‡è®°ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
   public List selectOrderSign(Integer id) {
     List list = new ArrayList();
     OrderForm order = null;
@@ -143,7 +143,7 @@ public class OrderDao {
     return list;
   }
 
-//Ìí¼ÓµÄ·½·¨
+//æ·»åŠ çš„æ–¹æ³•
   public void insertOrderDetail(OrderForm form) {
     try {
       ps = connection.prepareStatement("insert into tb_order values (null,?,?,?,?,?,?,?,?,?,now())");

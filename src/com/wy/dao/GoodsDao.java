@@ -6,17 +6,17 @@ import java.util.*;
 import com.wy.tool.JDBConnection;
 import com.wy.domain.GoodsForm;
 
-//¶ÔÉÌÆ·±íµÄ²Ù×÷
+//å¯¹å•†å“è¡¨çš„æ“ä½œ
 public class GoodsDao {
-  private Connection connection = null; //¶¨ÒåÁ¬½ÓµÄ¶ÔÏó
-  private PreparedStatement ps = null; //¶¨ÒåÔ¤×¼±¸µÄ¶ÔÏó
-  private JDBConnection jdbc = null; //¶¨ÒåÊı¾İ¿âÁ¬½Ó¶ÔÏó
+  private Connection connection = null; //å®šä¹‰è¿æ¥çš„å¯¹è±¡
+  private PreparedStatement ps = null; //å®šä¹‰é¢„å‡†å¤‡çš„å¯¹è±¡
+  private JDBConnection jdbc = null; //å®šä¹‰æ•°æ®åº“è¿æ¥å¯¹è±¡
   public GoodsDao() {
     jdbc = new JDBConnection();
-    connection = jdbc.connection; //ÀûÓÃ¹¹Ôì·½·¨È¡µÃÊı¾İ¿âÁ¬½Ó
+    connection = jdbc.connection; //åˆ©ç”¨æ„é€ æ–¹æ³•å–å¾—æ•°æ®åº“è¿æ¥
   }
 
-//¸ù¾İÉÌÆ·µÄIDĞŞ¸Ä¹ºÂòÉÌÆ·µÄÊıÁ¿
+//æ ¹æ®å•†å“çš„IDä¿®æ”¹è´­ä¹°å•†å“çš„æ•°é‡
   public void updateGoodsNumber(int number, Integer id) {
     try {
       ps = connection.prepareStatement("update tb_goods set number=number+? where id=?");
@@ -31,7 +31,7 @@ public class GoodsDao {
 
   }
 
-//ÉèÖÃÌØ¼Û¼Û¸ñµÄ·½·¨
+//è®¾ç½®ç‰¹ä»·ä»·æ ¼çš„æ–¹æ³•
   public void managerPrice(GoodsForm form) {
     try {
       ps = connection.prepareStatement("update tb_goods set freePrice=?,mark=? where id=?");
@@ -46,7 +46,7 @@ public class GoodsDao {
     }
   }
 
-  //ÒÔÉÌÆ·µÄÊÇ·ñÌØ¼ÛÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+  //ä»¥å•†å“çš„æ˜¯å¦ç‰¹ä»·ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
   public List selectMark(Integer mark) {
     List list = new ArrayList();
     GoodsForm goods = null;
@@ -77,7 +77,7 @@ public class GoodsDao {
     return list;
   }
 
-//Ìí¼Ó²Ù×÷
+//æ·»åŠ æ“ä½œ
   public void insertGoods(GoodsForm form) {
     try {
       ps = connection.prepareStatement("insert into tb_goods values (null,?,?,?,?,?,now(),?,?,?,?,?)");
@@ -99,7 +99,7 @@ public class GoodsDao {
     }
   }
 
-//ÒÔÉÌÆ·±àºÅÎªÌõ¼şÉ¾³ıĞÅÏ¢
+//ä»¥å•†å“ç¼–å·ä¸ºæ¡ä»¶åˆ é™¤ä¿¡æ¯
   public void deleteGoods(Integer id) {
     try {
       ps = connection.prepareStatement("delete from tb_goods where id=?");
@@ -112,7 +112,7 @@ public class GoodsDao {
     }
   }
 
-//ÒÔÉÌÆ·µÄ±àºÅÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+//ä»¥å•†å“çš„ç¼–å·ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
   public GoodsForm selectOneGoods(Integer id) {
     GoodsForm goods = new GoodsForm();
     try {
@@ -140,7 +140,7 @@ public class GoodsDao {
     return goods;
   }
 
-  //ÒÔÉÌÆ·µÄĞ¡Àà±ğµÄ±àºÅÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+  //ä»¥å•†å“çš„å°ç±»åˆ«çš„ç¼–å·ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
   public List selectSmall(Integer small) {
     List list = new ArrayList();
     GoodsForm goods = null;
@@ -171,7 +171,7 @@ public class GoodsDao {
     return list;
   }
 
-  //ÒÔÉÌÆ·µÄ´óÀà±ğµÄ±àºÅÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+  //ä»¥å•†å“çš„å¤§ç±»åˆ«çš„ç¼–å·ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
   public List selectBig(Integer big) {
     List list = new ArrayList();
     GoodsForm goods = null;
@@ -202,7 +202,7 @@ public class GoodsDao {
     return list;
   }
 
-//È«²¿²éÑ¯
+//å…¨éƒ¨æŸ¥è¯¢
   public List selectGoods() {
     List list = new ArrayList();
     GoodsForm goods = null;
@@ -232,7 +232,7 @@ public class GoodsDao {
     return list;
   }
 
-  //È«²¿²éÑ¯
+  //å…¨éƒ¨æŸ¥è¯¢
   public List selectGoodsNumber() {
     List list = new ArrayList();
     GoodsForm goods = null;

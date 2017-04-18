@@ -3,7 +3,7 @@ package com.wy.domain;
 import javax.servlet.http.*;
 
 import org.apache.struts.action.*;
-//¶©»õ±íµÄbean
+//è®¢è´§è¡¨çš„bean
 public class OrderForm
     extends ActionForm {
   private String address;

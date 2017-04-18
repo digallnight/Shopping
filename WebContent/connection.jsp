@@ -1,12 +1,12 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>判断用户是否为空</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>鍒ゆ柇鐢ㄦ埛鏄惁涓虹┖</title>
 </head>
 <body>
 <br>
-<script language='javascript'>alert('请先登录!');window.location.href='index.jsp';</script>
+<script language='javascript'>alert('璇峰厛鐧诲綍!');window.location.href='index.jsp';</script>
 
 </body>
 </html>

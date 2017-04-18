@@ -16,7 +16,7 @@ import com.wy.tool.*;
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 
-//ÉÌÆ·µÄAction
+//å•†å“çš„Action
 public class GoodsAction extends Action {
 	private int action;
 
@@ -36,53 +36,53 @@ public class GoodsAction extends Action {
 		session = request.getSession();
 		switch (action) {
 		case 0: {
-			return goodSelect(mapping, form, request, response); // È«²¿²éÑ¯Ğ¡Àà±ğĞÅÏ¢
+			return goodSelect(mapping, form, request, response); // å…¨éƒ¨æŸ¥è¯¢å°ç±»åˆ«ä¿¡æ¯
 		}
 		case 1: {
-			return goodForward(mapping, form, request, response); // ×ªÏòÒ³Ãæ
+			return goodForward(mapping, form, request, response); // è½¬å‘é¡µé¢
 		}
 		case 2: {
-			return selectSmallName(mapping, form, request, response); // ²éÑ¯Ğ¡Àà±ğµÄÃû³Æ
+			return selectSmallName(mapping, form, request, response); // æŸ¥è¯¢å°ç±»åˆ«çš„åç§°
 		}
 		case 3: {
-			return saveGoods(mapping, form, request, response); // °Ñ´ÓÒ³ÃæÖĞĞÅÏ¢´æ´¢ÔÚbeanÖĞ
+			return saveGoods(mapping, form, request, response); // æŠŠä»é¡µé¢ä¸­ä¿¡æ¯å­˜å‚¨åœ¨beanä¸­
 		}
 
 		case 5: {
-			return selectOneGoods(mapping, form, request, response); // ²é¿´ÉÌÆ·µÄÏêÏ¸ĞÅÏ¢
+			return selectOneGoods(mapping, form, request, response); // æŸ¥çœ‹å•†å“çš„è¯¦ç»†ä¿¡æ¯
 		}
 		case 6: {
-			return deleteGoods(mapping, form, request, response); // É¾³ıÉÌÆ·ĞÅÏ¢
+			return deleteGoods(mapping, form, request, response); // åˆ é™¤å•†å“ä¿¡æ¯
 		}
 		case 7: {
-			return goodSelectMark(mapping, form, request, response); // °´ÌØ¼ÛÉÌÆ·ĞÅÏ¢²éÑ¯
+			return goodSelectMark(mapping, form, request, response); // æŒ‰ç‰¹ä»·å•†å“ä¿¡æ¯æŸ¥è¯¢
 		}
 		case 8: {
-			return goodSelectSmall(mapping, form, request, response); // °´Ğ¡Àà±ğÉÌÆ·ĞÅÏ¢²éÑ¯
+			return goodSelectSmall(mapping, form, request, response); // æŒ‰å°ç±»åˆ«å•†å“ä¿¡æ¯æŸ¥è¯¢
 		}
 		case 9: {
-			return goodSelectBig(mapping, form, request, response); // °´´óÀà±ğÉÌÆ·ĞÅÏ¢²éÑ¯
+			return goodSelectBig(mapping, form, request, response); // æŒ‰å¤§ç±»åˆ«å•†å“ä¿¡æ¯æŸ¥è¯¢
 		}
 		case 10: {
-			return managerFreePirceForward(mapping, form, request, response); // ×ªÏòÌØ¼ÛÉÌÆ·Ò³Ãæ
+			return managerFreePirceForward(mapping, form, request, response); // è½¬å‘ç‰¹ä»·å•†å“é¡µé¢
 		}
 		case 11: {
-			return managerFreePirce(mapping, form, request, response); // ÉèÖÃÌØ¼Û¼Û¸ñ
+			return managerFreePirce(mapping, form, request, response); // è®¾ç½®ç‰¹ä»·ä»·æ ¼
 		}
 		case 12: {
-			return goodSelectBigHead(mapping, form, request, response); // °´´óÀà±ğÉÌÆ·ĞÅÏ¢²éÑ¯ÉÌÆ·ºÍÉÌÆ·Ğ¡Àà±ğµÄÃû³Æ
+			return goodSelectBigHead(mapping, form, request, response); // æŒ‰å¤§ç±»åˆ«å•†å“ä¿¡æ¯æŸ¥è¯¢å•†å“å’Œå•†å“å°ç±»åˆ«çš„åç§°
 		}
 		case 13: {
-			return goodSelectSmallHead(mapping, form, request, response); // °´Ğ¡Àà±ğÉÌÆ·ĞÅÏ¢²éÑ¯ÉÌÆ·ºÍÉÌÆ·Ğ¡Àà±ğµÄÃû³Æ
+			return goodSelectSmallHead(mapping, form, request, response); // æŒ‰å°ç±»åˆ«å•†å“ä¿¡æ¯æŸ¥è¯¢å•†å“å’Œå•†å“å°ç±»åˆ«çš„åç§°
 		}
 		case 14: {
-			return goodSelectNewHead(mapping, form, request, response); // ĞÂÆ·²éÑ¯
+			return goodSelectNewHead(mapping, form, request, response); // æ–°å“æŸ¥è¯¢
 		}
 		case 15: {
-			return goodSelectFreeHead(mapping, form, request, response); // ÌØ¼ÛÉÌÆ·
+			return goodSelectFreeHead(mapping, form, request, response); // ç‰¹ä»·å•†å“
 		}
 		case 16: {
-			return goodSelectOneHead(mapping, form, request, response); // Ç°Ì¨µ¥¶À²éÑ¯ÉÌÆ·µÄĞÅÏ¢
+			return goodSelectOneHead(mapping, form, request, response); // å‰å°å•ç‹¬æŸ¥è¯¢å•†å“çš„ä¿¡æ¯
 		}
 		}
 
@@ -91,7 +91,7 @@ public class GoodsAction extends Action {
 				"Method $execute() not yet implemented.");
 	}
 
-	// Ç°Ì¨µ¥¶À²éÑ¯ÉÌÆ·µÄĞÅÏ¢
+	// å‰å°å•ç‹¬æŸ¥è¯¢å•†å“çš„ä¿¡æ¯
 	public ActionForward goodSelectOneHead(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -100,15 +100,15 @@ public class GoodsAction extends Action {
 		return mapping.findForward("goodSelectOneHead");
 	}
 
-	// ÌØ¼ÛÉÌÆ·
+	// ç‰¹ä»·å•†å“
 	public ActionForward goodSelectFreeHead(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 		List list = null;
 		String mark = request.getParameter("mark");
 		list = dao.selectMark(Integer.valueOf(mark));
-		int pageNumber = list.size(); // ¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-		int maxPage = pageNumber; // ¼ÆËãÓĞ¶àÉÙÒ³Êı
+		int pageNumber = list.size(); // è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+		int maxPage = pageNumber; // è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
 		String number = request.getParameter("i");
 		if (maxPage % 4 == 0) {
 			maxPage = maxPage / 4;
@@ -125,7 +125,7 @@ public class GoodsAction extends Action {
 		return mapping.findForward("goodSelectFreeHead");
 	}
 
-	// ĞÂÆ·²éÑ¯
+	// æ–°å“æŸ¥è¯¢
 	public ActionForward goodSelectNewHead(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -136,14 +136,14 @@ public class GoodsAction extends Action {
 		return mapping.findForward("goodSelectNewHead");
 	}
 
-	// °´Ğ¡Àà±ğÉÌÆ·ĞÅÏ¢²éÑ¯ÉÌÆ·ºÍÉÌÆ·Ğ¡Àà±ğµÄÃû³Æ
+	// æŒ‰å°ç±»åˆ«å•†å“ä¿¡æ¯æŸ¥è¯¢å•†å“å’Œå•†å“å°ç±»åˆ«çš„åç§°
 	public ActionForward goodSelectSmallHead(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 		List list = null;
 		list = dao.selectSmall(Integer.valueOf(request.getParameter("small")));
-		int pageNumber = list.size(); // ¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-		int maxPage = pageNumber; // ¼ÆËãÓĞ¶àÉÙÒ³Êı
+		int pageNumber = list.size(); // è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+		int maxPage = pageNumber; // è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
 		String number = request.getParameter("i");
 		if (maxPage % 4 == 0) {
 			maxPage = maxPage / 4;
@@ -162,14 +162,14 @@ public class GoodsAction extends Action {
 		return mapping.findForward("goodSelectSmallHead");
 	}
 
-	// °´´óÀà±ğÉÌÆ·ĞÅÏ¢²éÑ¯ÉÌÆ·ºÍÉÌÆ·Ğ¡Àà±ğµÄÃû³Æ
+	// æŒ‰å¤§ç±»åˆ«å•†å“ä¿¡æ¯æŸ¥è¯¢å•†å“å’Œå•†å“å°ç±»åˆ«çš„åç§°
 	public ActionForward goodSelectBigHead(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 		List list = null;
 		list = dao.selectBig(Integer.valueOf(request.getParameter("big")));
-		int pageNumber = list.size(); // ¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-		int maxPage = pageNumber; // ¼ÆËãÓĞ¶àÉÙÒ³Êı
+		int pageNumber = list.size(); // è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+		int maxPage = pageNumber; // è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
 		String number = request.getParameter("i");
 		if (maxPage % 4 == 0) {
 			maxPage = maxPage / 4;
@@ -188,7 +188,7 @@ public class GoodsAction extends Action {
 		return mapping.findForward("goodSelectBigHead");
 	}
 
-	// ÉèÖÃÌØ¼Û¼Û¸ñ
+	// è®¾ç½®ç‰¹ä»·ä»·æ ¼
 	public ActionForward managerFreePirce(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -200,20 +200,20 @@ public class GoodsAction extends Action {
 			goodsForm.setMark(Integer.valueOf("0"));
 			goodsForm.setId(Integer.valueOf(id));
 			dao.managerPrice(goodsForm);
-			request.setAttribute("result", "É¾³ıÌØ¼Û³É¹¦£¡£¡");
+			request.setAttribute("result", "åˆ é™¤ç‰¹ä»·æˆåŠŸï¼ï¼");
 		} else {
 			String free = request.getParameter("free").trim();
 			goodsForm.setFreePrice(Float.valueOf(free));
 			goodsForm.setMark(Integer.valueOf(mark));
 			goodsForm.setId(Integer.valueOf(id));
 			dao.managerPrice(goodsForm);
-			request.setAttribute("result", "ÉèÖÃÌØ¼Û³É¹¦£¡£¡");
+			request.setAttribute("result", "è®¾ç½®ç‰¹ä»·æˆåŠŸï¼ï¼");
 		}
 
 		return mapping.findForward("goodsOperation");
 	}
 
-	// ×ªÏòÌØ¼ÛÉÌÆ·Ò³Ãæ
+	// è½¬å‘ç‰¹ä»·å•†å“é¡µé¢
 	public ActionForward managerFreePirceForward(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -222,13 +222,13 @@ public class GoodsAction extends Action {
 		return mapping.findForward("managerFreePirce");
 	}
 
-	// °´´óÀà±ğÉÌÆ·ĞÅÏ¢²éÑ¯
+	// æŒ‰å¤§ç±»åˆ«å•†å“ä¿¡æ¯æŸ¥è¯¢
 	public ActionForward goodSelectBig(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		List list = null;
 		list = dao.selectBig(Integer.valueOf(request.getParameter("big")));
-		int pageNumber = list.size(); // ¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-		int maxPage = pageNumber; // ¼ÆËãÓĞ¶àÉÙÒ³Êı
+		int pageNumber = list.size(); // è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+		int maxPage = pageNumber; // è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
 		String number = request.getParameter("i");
 		if (maxPage % 6 == 0) {
 			maxPage = maxPage / 6;
@@ -245,14 +245,14 @@ public class GoodsAction extends Action {
 		return mapping.findForward("goodSelectBig");
 	}
 
-	// °´Ğ¡Àà±ğÉÌÆ·ĞÅÏ¢²éÑ¯
+	// æŒ‰å°ç±»åˆ«å•†å“ä¿¡æ¯æŸ¥è¯¢
 	public ActionForward goodSelectSmall(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 		List list = null;
 		list = dao.selectSmall(Integer.valueOf(request.getParameter("small")));
-		int pageNumber = list.size(); // ¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-		int maxPage = pageNumber; // ¼ÆËãÓĞ¶àÉÙÒ³Êı
+		int pageNumber = list.size(); // è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+		int maxPage = pageNumber; // è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
 		String number = request.getParameter("i");
 		if (maxPage % 6 == 0) {
 			maxPage = maxPage / 6;
@@ -269,13 +269,13 @@ public class GoodsAction extends Action {
 		return mapping.findForward("goodSelectSmall");
 	}
 
-	// °´ÌØ¼ÛÉÌÆ·ĞÅÏ¢²éÑ¯
+	// æŒ‰ç‰¹ä»·å•†å“ä¿¡æ¯æŸ¥è¯¢
 	public ActionForward goodSelectMark(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		List list = null;
 		list = dao.selectMark(Integer.valueOf(request.getParameter("mark")));
-		int pageNumber = list.size(); // ¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-		int maxPage = pageNumber; // ¼ÆËãÓĞ¶àÉÙÒ³Êı
+		int pageNumber = list.size(); // è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+		int maxPage = pageNumber; // è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
 		String number = request.getParameter("i");
 		if (maxPage % 6 == 0) {
 			maxPage = maxPage / 6;
@@ -292,15 +292,15 @@ public class GoodsAction extends Action {
 		return mapping.findForward("goodSelectMark");
 	}
 
-	// É¾³ıÉÌÆ·µÄ²Ù×÷
+	// åˆ é™¤å•†å“çš„æ“ä½œ
 	public ActionForward deleteGoods(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		dao.deleteGoods(Integer.valueOf(request.getParameter("id")));
-		request.setAttribute("result", "É¾³ıÉÌÆ·ĞÅÏ¢³É¹¦");
+		request.setAttribute("result", "åˆ é™¤å•†å“ä¿¡æ¯æˆåŠŸ");
 		return mapping.findForward("goodsOperation");
 	}
 
-	// ²é¿´ÉÌÆ·µÄÏêÏ¸ĞÅÏ¢
+	// æŸ¥çœ‹å•†å“çš„è¯¦ç»†ä¿¡æ¯
 	public ActionForward selectOneGoods(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("form", dao.selectOneGoods(Integer.valueOf(request
@@ -308,7 +308,7 @@ public class GoodsAction extends Action {
 		return mapping.findForward("selectContent");
 	}
 
-	// Ìí¼ÓÉÌÆ·µÄĞÅÏ¢
+	// æ·»åŠ å•†å“çš„ä¿¡æ¯
 	public ActionForward saveGoods(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
@@ -320,7 +320,7 @@ public class GoodsAction extends Action {
 		FormFile formFile = goodsForm.getFormFile();
 		String getType = formFile.getFileName().substring(
 				formFile.getFileName().lastIndexOf(".") + 1);
-		String result = "Ìí¼ÓÉÌÆ·ĞÅÏ¢Ê§°Ü";
+		String result = "æ·»åŠ å•†å“ä¿¡æ¯å¤±è´¥";
 		String imageType[] = { "JPG", "jpg", "gif", "bmp", "BMP" };
 		for (int ii = 0; ii < imageType.length; ii++) {
 			if (imageType[ii].equals(getType)) {
@@ -335,14 +335,14 @@ public class GoodsAction extends Action {
 				
 				goodsForm.setPriture("goodsPicture/"+uploadFile.upload(dir, formFile));
 				dao.insertGoods(goodsForm);
-				result = "Ìí¼ÓÉÌÆ·ĞÅÏ¢³É¹¦";
+				result = "æ·»åŠ å•†å“ä¿¡æ¯æˆåŠŸ";
 			}
 		}
 		request.setAttribute("result", result);
 		return mapping.findForward("goodsOperation");
 	}
 
-	// ²éÑ¯Ğ¡Àà±ğµÄÃû³Æ
+	// æŸ¥è¯¢å°ç±»åˆ«çš„åç§°
 	public ActionForward selectSmallName(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -350,19 +350,19 @@ public class GoodsAction extends Action {
 		return mapping.findForward("goodForward");
 	}
 
-	// ×ªÏòÒ³Ãæ
+	// è½¬å‘é¡µé¢
 	public ActionForward goodForward(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		return mapping.findForward("goodForward");
 	}
 
-	// È«²¿²éÑ¯ĞÅÏ¢
+	// å…¨éƒ¨æŸ¥è¯¢ä¿¡æ¯
 	public ActionForward goodSelect(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		List list = null;
 		list = dao.selectGoods();
-		int pageNumber = list.size(); // ¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-		int maxPage = pageNumber; // ¼ÆËãÓĞ¶àÉÙÒ³Êı
+		int pageNumber = list.size(); // è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+		int maxPage = pageNumber; // è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
 		String number = request.getParameter("i");
 		if (maxPage % 6 == 0) {
 			maxPage = maxPage / 6;

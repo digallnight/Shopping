@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="java.util.*"%>
 <%@ page import="com.wy.domain.SellGoodsForm"%>
 <%
@@ -14,7 +14,7 @@ for(int i=0;i<cart.size();i++){
 	if(newnum!=0){
 		newcart.addElement(mygoodselement);}
 	}catch(Exception e){
-		out.println("<script language='javascript'>alert('ÄúÊäÈëµÄÊıÁ¿²»ÊÇÓĞĞ§µÄÕûÊı!');history.back();</script>");
+		out.println("<script language='javascript'>alert('æ‚¨è¾“å…¥çš„æ•°é‡ä¸æ˜¯æœ‰æ•ˆçš„æ•´æ•°!');history.back();</script>");
 		return;
 	}
 }

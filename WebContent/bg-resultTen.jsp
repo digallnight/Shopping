@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.GoodsForm"%>
 <jsp:useBean id="goods" scope="page" class="com.wy.dao.GoodsDao"/>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>╣ГвсилЁг</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Г■╣Е╜░Е∙├Е÷▌</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css"> 
 <body>
@@ -13,10 +13,10 @@
 <table width="766" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="207" valign="top" bgcolor="#F5F5F5">
-    <!--вС╡Ю01-->
+    <!--Е╥╕Д╬╖01-->
     <jsp:include page="fg-left.jsp" flush="true"/></td>
     <td width="559" valign="top" bgcolor="#FFFFFF" align="center">
-    <!--ср╡Ю01-->	
+    <!--Е▐ЁД╬╖01-->	
 	<jsp:include page="fg-goodSorts.jsp" flush="true"/>	
 	<%
         List list=goods.selectGoodsNumber();
@@ -24,12 +24,12 @@
 		if(number>10){
 		number=10;
 	}%>
-	илф╥оЗйшеепп TOP<%=number%>	
+	Е∙├Е⌠│И■─Е■╝Ф▌▓Х║▄ TOP<%=number%>	
 	<br><br>
       <%  for(int i=0;i<number;i++){
           GoodsForm form=(GoodsForm)list.get(i);
         %>
-        ╣з<%=i+1%>цШ
+        Г╛╛<%=i+1%>Е░█
 		<table width="99%"  border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#819BBC">
           <tr>
             <td width="36%" rowspan="4" height="84"><div align="center">
@@ -38,7 +38,7 @@
             <td width="64%" height="21"><div align="center"><%=form.getName()%></div></td>
           </tr>
           <tr>
-            <td height="21"><div align="center">╣╔╪шё╨<%=form.getNowPrice()%>т╙</div></td>
+            <td height="21"><div align="center">Е█∙Д╩╥О╪ <%=form.getNowPrice()%>Е┘┐</div></td>
           </tr>
           <tr>
             <td height="21"><div align="center"><%=form.getIntroduce()%></div></td>
@@ -46,9 +46,9 @@
           <tr>
           
             <td height="21" align="center">  <%if(session.getAttribute("form")!=null){%>
-			<a href="#" onClick="window.open('goodsAction.do?action=16&id=<%=form.getId()%>','','width=500,height=200');">╡И©╢оЙо╦дзхщ</a>
+			<a href="#" onClick="window.open('goodsAction.do?action=16&id=<%=form.getId()%>','','width=500,height=200');">Ф÷╔Г°▀Х╞╕Г╩├Е├┘Е╝╧</a>
             <%}else{%>
-           ╣гб╪╨С╡едэ╧╨бР</td>
+           Г≥╩Е╫∙Е░▌Ф┴█Х┐╫Х╢╜Д╧╟</td>
             <%}%>
           </tr>
         </table><br>

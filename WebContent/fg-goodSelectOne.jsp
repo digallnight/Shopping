@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.GoodsForm"%>
@@ -8,7 +8,7 @@ GoodsForm form=(GoodsForm)request.getAttribute("form");
 %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="managerGoods/css/css.css">
 <title></title>
 <style type="text/css">
@@ -34,7 +34,7 @@ td {
 
 
 <div align="center">
-  <p class="style1">²é¿´ÉÌÆ·Çåµ¥</p>
+  <p class="style1">æŸ¥çœ‹å•†å“æ¸…å•</p>
 </div>
 <table width="400"  border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#819BBC">
   <tr>
@@ -44,7 +44,7 @@ td {
     <td width="64%" height="30"><div align="center">
       <table width="71%" height="20"  border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
-          <td>»õÆ·Ãû³Æ£º<%=form.getName()%> <input type="hidden" name="goodsId" value="<%=form.getId()%>" /></td>
+          <td>è´§å“åç§°ï¼š<%=form.getName()%> <input type="hidden" name="goodsId" value="<%=form.getId()%>" /></td>
         </tr>
       </table>
     </div></td>
@@ -54,9 +54,9 @@ td {
         <table width="71%"  border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
         <td><%if(form.getMark().toString().equals("1")){%>
-ÌØ&nbsp;&nbsp;&nbsp;&nbsp;¼Û£º<%=form.getFreePrice()%>Ôª<input  type="hidden" name="price" value="<%=form.getFreePrice()%>"/>
+ç‰¹&nbsp;&nbsp;&nbsp;&nbsp;ä»·ï¼š<%=form.getFreePrice()%>å…ƒ<input  type="hidden" name="price" value="<%=form.getFreePrice()%>"/>
 <%}else{%>
-ÏÖ&nbsp;&nbsp;&nbsp;&nbsp;¼Û£º<%=form.getNowPrice()%>Ôª<input type="hidden" name="price" value="<%=form.getNowPrice()%>"/>
+ç°&nbsp;&nbsp;&nbsp;&nbsp;ä»·ï¼š<%=form.getNowPrice()%>å…ƒ<input type="hidden" name="price" value="<%=form.getNowPrice()%>"/>
 <%}%></td>
       </tr>
     </table>
@@ -66,7 +66,7 @@ td {
     <td height="30"><div align="center">
       <table width="71%"  border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
-          <td>¼ò&nbsp;&nbsp;&nbsp;&nbsp;½é£º<%=form.getIntroduce()%> </td>
+          <td>ç®€&nbsp;&nbsp;&nbsp;&nbsp;ä»‹ï¼š<%=form.getIntroduce()%> </td>
         </tr>
       </table>
     </div></td>
@@ -76,7 +76,7 @@ td {
 	
 	<img src="image/1.jpg" onClick="window.close()">
 	
-	&nbsp;&nbsp;<input type="image" src="image/2.jpg" name="Submit" value="·ÅÈë¹ºÎï³µ"></td>
+	&nbsp;&nbsp;<input type="image" src="image/2.jpg" name="Submit" value="æ”¾å…¥è´­ç‰©è½¦"></td>
 
   </tr>
 </table>

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*"%>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*"%>
 <%
 session.removeAttribute("cart");
 response.sendRedirect("cart_see.jsp");

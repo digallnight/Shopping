@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
@@ -16,7 +16,7 @@ GoodsForm goodsForm=(GoodsForm)request.getAttribute("form");
 function checkEmpty(form){
 for(i=0;i<form.length;i++){
 if(form.elements[i].value==""){
-alert("±íµ¥ĞÅÏ¢²»ÄÜÎª¿Õ");
+alert("è¡¨å•ä¿¡æ¯ä¸èƒ½ä¸ºç©º");
 return false;
 }
 }
@@ -26,8 +26,8 @@ return false;
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>µç×ÓÉÌ³ÇµÄºóÌ¨</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç”µå­å•†åŸçš„åå°</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css">
 <body>
@@ -46,36 +46,36 @@ return false;
 	
         <table width="610" height="25" border="0" cellpadding="0" cellspacing="0" background="image/bg_02.jpg">
           <tr>
-            <td><div align="center"><strong>²é¿´ÉÌÆ·µÄÏêÏ¸Çé¿ö</strong></div></td>
+            <td><div align="center"><strong>æŸ¥çœ‹å•†å“çš„è¯¦ç»†æƒ…å†µ</strong></div></td>
           </tr>
         </table>
         <br>
 		
 		      <table width="90%" height="209"  border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#CCCCCC">
           <tr>
-            <td width="20%" height="26">&nbsp;&nbsp;ËùÊô´óÀà±ğ</td>
+            <td width="20%" height="26">&nbsp;&nbsp;æ‰€å±å¤§ç±»åˆ«</td>
             <td width="31%" bgcolor="#FFFFFF">&nbsp;&nbsp;<%=big.selectName(goodsForm.getBig())%></td>
-            <td width="20%">&nbsp;&nbsp;ËùÊôÓÚĞ¡Àà±ğ</td>
+            <td width="20%">&nbsp;&nbsp;æ‰€å±äºå°ç±»åˆ«</td>
             <td width="31%" bgcolor="#FFFFFF">&nbsp;&nbsp;<%=small.selectName(goodsForm.getSmall())%></td>
           </tr>
           <tr>
-            <td height="26">&nbsp;&nbsp;ÉÌÆ·Ãû³Æ</td>
+            <td height="26">&nbsp;&nbsp;å•†å“åç§°</td>
             <td bgcolor="#FFFFFF">&nbsp;&nbsp;<%=goodsForm.getName()%></td>
-            <td>&nbsp;&nbsp;Éú²ú³§ÉÌ</td>
+            <td>&nbsp;&nbsp;ç”Ÿäº§å‚å•†</td>
             <td bgcolor="#FFFFFF">&nbsp;&nbsp;<%=goodsForm.getFrom()%></td>
           </tr>
           <tr>
-            <td height="26">&nbsp;&nbsp;ÉÌÆ·¶¨¼Û</td>
-            <td bgcolor="#FFFFFF">&nbsp;&nbsp;<%=goodsForm.getNowPrice()%>Ôª</td>
-            <td>&nbsp;&nbsp;ÌØ¼Û</td>
-            <td bgcolor="#FFFFFF">&nbsp;&nbsp;<%=goodsForm.getFreePrice()%>Ôª</td>
+            <td height="26">&nbsp;&nbsp;å•†å“å®šä»·</td>
+            <td bgcolor="#FFFFFF">&nbsp;&nbsp;<%=goodsForm.getNowPrice()%>å…ƒ</td>
+            <td>&nbsp;&nbsp;ç‰¹ä»·</td>
+            <td bgcolor="#FFFFFF">&nbsp;&nbsp;<%=goodsForm.getFreePrice()%>å…ƒ</td>
           </tr>
           <tr>
-            <td height="26">&nbsp;&nbsp;ÉÌÆ·¼ò½é</td>
+            <td height="26">&nbsp;&nbsp;å•†å“ç®€ä»‹</td>
             <td colspan="3" bgcolor="#FFFFFF">&nbsp;&nbsp;<%=goodsForm.getIntroduce()%></td>
           </tr>
           <tr>
-            <td height="79">&nbsp;&nbsp;ÉÌÆ·Í¼Æ¬</td>
+            <td height="79">&nbsp;&nbsp;å•†å“å›¾ç‰‡</td>
             <td colspan="3" bgcolor="#FFFFFF">&nbsp;&nbsp;
             <input name="imageField" type="image" src="<%=goodsForm.getPriture()%>" width="140" height="126"></td>
           </tr>
@@ -86,18 +86,18 @@ return false;
 			  <%if(mark.equals("0")){%>
 			
 			<%}else{%>
-			<a href="goodsAction.do?action=11&id=<%=goodsForm.getId()%>&mark=0">É¾³ıÌØ¼ÛĞÅÏ¢</a>
+			<a href="goodsAction.do?action=11&id=<%=goodsForm.getId()%>&mark=0">åˆ é™¤ç‰¹ä»·ä¿¡æ¯</a>
 			<%}%>
 			&nbsp;&nbsp;</td>
            
 		    <td width="22%" align="right">
                         <%if(mark.equals("0")){%>
-              <a href="goodsAction.do?action=10&id=<%=goodsForm.getId()%>">ÉèÖÃÌØ¼ÛÉÌÆ·</a>
+              <a href="goodsAction.do?action=10&id=<%=goodsForm.getId()%>">è®¾ç½®ç‰¹ä»·å•†å“</a>
               <%}else{%>
-              <a href="goodsAction.do?action=10&id=<%=goodsForm.getId()%>">µ÷ÕûÌØ¼ÛÉÌÆ·</a>
+              <a href="goodsAction.do?action=10&id=<%=goodsForm.getId()%>">è°ƒæ•´ç‰¹ä»·å•†å“</a>
               <%}%>
 &nbsp;&nbsp;</td>
-            <td width="13%"> <a href="javascript:history.back();">·µ»Ø</a></td>
+            <td width="13%"> <a href="javascript:history.back();">è¿”å›</a></td>
           </tr>
         </table>
 		

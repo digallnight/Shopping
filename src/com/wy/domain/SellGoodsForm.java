@@ -1,8 +1,8 @@
 package com.wy.domain;
-//购货商品的bean
+//璐揣鍟嗗搧鐨刡ean
 public class SellGoodsForm {
-  public int ID;    //商品ID
-  public float price;    //价格
-  public int number;     //数量
+  public int ID;    //鍟嗗搧ID
+  public float price;    //浠锋牸
+  public int number;     //鏁伴噺
 
 }

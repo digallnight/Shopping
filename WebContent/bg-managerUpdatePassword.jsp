@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.ManagerForm"%>
@@ -11,24 +11,24 @@ ManagerForm form=(ManagerForm)session.getAttribute("manager");
 function checkEmpty(form){
 for(i=0;i<form.length;i++){
 if(form.elements[i].value==""){
-alert("±íµ¥ĞÅÏ¢²»ÄÜÎª¿Õ");
+alert("è¡¨å•ä¿¡æ¯ä¸èƒ½ä¸ºç©º");
 return false;
 }
 }
 if(document.form.selectPassword.value!=document.form.old.value){
-window.alert("ÄúÊäÈëÔ­À´µÄÃÜÂë²»ÕıÈ·£¬ÇëÖØĞÂÊäÈë");
+window.alert("æ‚¨è¾“å…¥åŸæ¥çš„å¯†ç ä¸æ­£ç¡®ï¼Œè¯·é‡æ–°è¾“å…¥");
 return false;
 }
 if(document.form.password.value!=document.form.passwordNext.value){
-window.alert("ÄúÁ½´ÎÊäÈëµÄÃÜÂë²»Ò»ÖÂ£¬ÇëÖØĞÂÊäÈë");
+window.alert("æ‚¨ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥");
 return false;
 }
 
 return true;
 }
 </script><head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>µç×ÓÉÌ³ÇµÄºóÌ¨</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç”µå­å•†åŸçš„åå°</title>
 </head>
  
 <html:html>
@@ -42,24 +42,24 @@ return true;
 	
         <table width="610" height="25" border="0" cellpadding="0" cellspacing="0" background="image/bg_02.jpg">
           <tr>
-            <td><div align="center"><strong>ĞŞ¸Ä¹ÜÀíÔ±ÃÜÂë</strong></div></td>
+            <td><div align="center"><strong>ä¿®æ”¹ç®¡ç†å‘˜å¯†ç </strong></div></td>
           </tr>
         </table>
         <br>
 <form name="form" method="post" action="managerAction.do?action=8&account=<%=form.getAccount()%>" onSubmit="return checkEmpty(form)">
        <table width="60%"  border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#CCCCCC">
           <tr><input name="selectPassword" type="hidden"  value="<%=form.getPassword()%>">
-            <td width="29%" height="30"><div align="center">Ô­ÃÜÂë</div></td>
+            <td width="29%" height="30"><div align="center">åŸå¯†ç </div></td>
             <td width="71%" bgcolor="#FFFFFF">&nbsp;
             <input name="old" type="password" size="30"></td>
           </tr>
           <tr>
-            <td height="30"><div align="center">ĞÂÃÜÂë</div></td>
+            <td height="30"><div align="center">æ–°å¯†ç </div></td>
             <td bgcolor="#FFFFFF">&nbsp;
             <input name="password" type="password" size="30"></td>
           </tr>
           <tr>
-            <td height="30"><div align="center">ÔÙ´ÎÊäÈëĞÂÃÜÂë</div></td>
+            <td height="30"><div align="center">å†æ¬¡è¾“å…¥æ–°å¯†ç </div></td>
             <td bgcolor="#FFFFFF">&nbsp;
             <input name="passwordNext" type="password" size="30"></td>
           </tr>

@@ -6,13 +6,13 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 
-//友情连接网站的Bean
+//鍙嬫儏杩炴帴缃戠珯鐨凚ean
 public class LinkForm extends ActionForm {
-	private Integer id = -1; // 数据库流水号
+	private Integer id = -1; // 鏁版嵁搴撴祦姘村彿
 
-	private String linkAddress = ""; // 连接地址
+	private String linkAddress = ""; // 杩炴帴鍦板潃
 
-	private String linkName = ""; // 连接名称
+	private String linkName = ""; // 杩炴帴鍚嶇О
 
 	public LinkForm() {
 	}

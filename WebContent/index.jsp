@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.GoodsForm" %>
@@ -7,8 +7,8 @@
 <%List freeList =newGood.selectMark(Integer.valueOf("1"));%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>�����̳�</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>电子商城</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css"> 
 <body>
@@ -16,10 +16,10 @@
 <table width="766" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="207" valign="top" bgcolor="#F5F5F5">
-    <!--���01-->
+    <!--左侧01-->
     <jsp:include page="fg-left.jsp" flush="true"/></td>
     <td width="559" valign="top" bgcolor="#FFFFFF">
-    <!--�Ҳ�01-->	
+    <!--右侧01-->	
 	<jsp:include page="fg-goodSorts.jsp" flush="true"/>	
 
 
@@ -46,16 +46,16 @@
                 <td width="67%" height="20" bgcolor="#FFFFFF"><div align="center"><%=newGoods.getName()%></div></td>
               </tr>
               <tr>
-                <td height="20" bgcolor="#FFFFFF"><div align="center" style="text-decoration:line-through;color:#910402">ԭ�ۣ�<%=newGoods.getNowPrice()%>Ԫ</div></td>
+                <td height="20" bgcolor="#FFFFFF"><div align="center" style="text-decoration:line-through;color:#910402">原价：<%=newGoods.getNowPrice()%>元</div></td>
               </tr>
               <tr>
-                <td height="20" bgcolor="#FFFFFF"><div align="center"><font color="#F14D83">�ּۣ�<%=newGoods.getFreePrice()%>Ԫ</font></div></td>
+                <td height="20" bgcolor="#FFFFFF"><div align="center"><font color="#F14D83">现价：<%=newGoods.getFreePrice()%>元</font></div></td>
               </tr>
               <tr>
                 <td height="20" bgcolor="#FFFFFF"><div align="center"><%=newGoods.getIntroduce()%></div></td>
               </tr>
               <tr>
-                <td height="13" bgcolor="#FFFFFF"><div align="center" class="linkBlack"><a href="#" onClick="window.open('goodsAction.do?action=16&id=<%=newGoods.getId()%>','','width=500,height=200');">�鿴��ϸ����</a></div></td>
+                <td height="13" bgcolor="#FFFFFF"><div align="center" class="linkBlack"><a href="#" onClick="window.open('goodsAction.do?action=16&id=<%=newGoods.getId()%>','','width=500,height=200');">查看详细内容</a></div></td>
               </tr>
             </table></td>
             <%}%>
@@ -95,7 +95,7 @@
                           <td width="64%" bgcolor="#FFFFFF"><div align="center"><%=newGoods.getName()%></div></td>
                         </tr>
                         <tr>
-                          <td bgcolor="#FFFFFF"><div align="center"><font color="#F14D83">���ۣ�<%=newGoods.getNowPrice()%>Ԫ</font></div></td>
+                          <td bgcolor="#FFFFFF"><div align="center"><font color="#F14D83">单价：<%=newGoods.getNowPrice()%>元</font></div></td>
                         </tr>
                         <tr>
                           <td bgcolor="#FFFFFF"><div align="center"><%=newGoods.getIntroduce()%></div></td>
@@ -103,9 +103,9 @@
                         <tr>
                           <td  bgcolor="#FFFFFF" class="linkBlack"  align="center">
                               <%if(session.getAttribute("form")!=null||session.getAttribute("id")!=null){%>
-                              <a href="#" onClick="window.open('goodsAction.do?action=16&id=<%=newGoods.getId()%>','','width=500,height=200');">�鿴��ϸ����</a>
+                              <a href="#" onClick="window.open('goodsAction.do?action=16&id=<%=newGoods.getId()%>','','width=500,height=200');">查看详细内容</a>
                               <%}else{%>
-                           ��¼����ܹ���</td>
+                           登录后才能购买</td>
                           <%}%>
                         </tr>
                     </table></td>

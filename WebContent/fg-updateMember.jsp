@@ -1,9 +1,9 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%><head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>µç×ÓÉÌ³Ç</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç”µå­å•†åŸŽ</title>
 </head>
 
 <html:html>
@@ -12,16 +12,16 @@
 function checkEmpty(memberForm){
 for(i=0;i<memberForm.length;i++){
 if(memberForm.elements[i].value==""){
-alert("±íµ¥ÐÅÏ¢²»ÄÜÎª¿Õ");
+alert("è¡¨å•ä¿¡æ¯ä¸èƒ½ä¸ºç©º");
 return false;
 }
 }
 if(document.memberForm.password.value!=document.memberForm.passwordOne.value){
-window.alert("ÄúÁ½´ÎÊäÈëµÄÃÜÂë²»Ò»ÖÂ£¬ÇëÖØÐÂÊäÈë");
+window.alert("æ‚¨ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥");
 return false;
 }
 if(isNaN(document.memberForm.age.value)){
-window.alert("ÄêÁäÖ»ÄÜÎªÊý×Ö");
+window.alert("å¹´é¾„åªèƒ½ä¸ºæ•°å­—");
 return false;
 }
 }
@@ -40,14 +40,14 @@ return false;
 <table width="298"  border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="105" height="35">
-          <div align="right">»áÔ±Ãû³Æ£º</div></td>
+          <div align="right">ä¼šå‘˜åç§°ï¼š</div></td>
         <td width="187"><div align="center">
           <input type="hidden" name="name" value="<%=form.getName()%>"><%=form.getName()%>
         </div></td>
       </tr>
        <tr>
         <td height="35">
-          <div align="right">Ô­À´µÄÃÜÂë£º</div></td>
+          <div align="right">åŽŸæ¥çš„å¯†ç ï¼š</div></td>
         <td><div align="center">
            <input type="hidden" name="result" value="<%=form.getResult()%>">
             <input type="hidden" name="question" value="<%=form.getQuestion()%>">
@@ -57,42 +57,42 @@ return false;
       </tr>
       <tr>
         <td height="35">
-          <div align="right">»áÔ±ÃÜÂë£º</div></td>
+          <div align="right">ä¼šå‘˜å¯†ç ï¼š</div></td>
         <td><div align="center">
           <input type="password" name="password">
         </div></td>
       </tr>
       <tr>
         <td height="35">
-          <div align="right">ÃÜÂëÈ·ÈÏ£º</div></td>
+          <div align="right">å¯†ç ç¡®è®¤ï¼š</div></td>
         <td><div align="center">
           <input type="password" name="passwordOne">
         </div></td>
       </tr>
       <tr>
         <td height="35">
-          <div align="right">ÕæÊµÐÕÃû£º</div></td>
+          <div align="right">çœŸå®žå§“åï¼š</div></td>
         <td><div align="center">
           <input type="text" name="reallyName" value="<%=form.getReallyName()%>">
         </div></td>
       </tr>
       <tr>
         <td height="35">
-          <div align="right">ÄêÁä£º</div></td>
+          <div align="right">å¹´é¾„ï¼š</div></td>
         <td><div align="center">
           <input type="text" name="age" value="<%=form.getAge()%>">
         </div></td>
       </tr>
       <tr>
         <td height="35">
-          <div align="right">Ö°Òµ£º</div></td>
+          <div align="right">èŒä¸šï¼š</div></td>
         <td><div align="center">
           <input type="text" name="profession" value="<%=form.getProfession()%>">
         </div></td>
       </tr>
       <tr>
         <td height="35">
-          <div align="right">EmailµØÖ·£º</div></td>
+          <div align="right">Emailåœ°å€ï¼š</div></td>
         <td><div align="center">
           <input name="email" type="text"  value="<%=form.getEmail()%>">
         </div></td>

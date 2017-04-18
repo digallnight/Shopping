@@ -5,18 +5,18 @@ import java.sql.*;
 import java.util.*;
 import com.wy.domain.MemberForm;
 
-//¶Ô»áÔ±±íµÄ²Ù×÷
+//å¯¹ä¼šå‘˜è¡¨çš„æ“ä½œ
 public class MemberDao {
-  private Connection connection = null; //¶¨ÒåÁ¬½ÓµÄ¶ÔÏó
-  private PreparedStatement ps = null; //¶¨ÒåÔ¤×¼±¸µÄ¶ÔÏó
-  private JDBConnection jdbc = null; //¶¨ÒåÊı¾İ¿âÁ¬½Ó¶ÔÏó
+  private Connection connection = null; //å®šä¹‰è¿æ¥çš„å¯¹è±¡
+  private PreparedStatement ps = null; //å®šä¹‰é¢„å‡†å¤‡çš„å¯¹è±¡
+  private JDBConnection jdbc = null; //å®šä¹‰æ•°æ®åº“è¿æ¥å¯¹è±¡
   public MemberDao() {
     jdbc = new JDBConnection();
-    connection = jdbc.connection; //ÀûÓÃ¹¹Ôì·½·¨È¡µÃÊı¾İ¿âÁ¬½Ó
+    connection = jdbc.connection; //åˆ©ç”¨æ„é€ æ–¹æ³•å–å¾—æ•°æ®åº“è¿æ¥
   }
 
 
-//ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼şĞŞ¸Ä»áÔ±µÄÃÜÂë
+//ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶ä¿®æ”¹ä¼šå‘˜çš„å¯†ç 
   public boolean updatePassword(String password, Integer id) {
     try {
       ps = connection.prepareStatement("update tb_member set password=? where id=?");
@@ -32,7 +32,7 @@ public class MemberDao {
     }
   }
 
-//ÕÒ»ØÃÜÂëÖ®ÓÃ
+//æ‰¾å›å¯†ç ä¹‹ç”¨
   public MemberForm selectFind(String name, String result) {
     MemberForm member = null;
     try {
@@ -59,7 +59,7 @@ public class MemberDao {
     return member;
   }
 
-  //È«²¿²éÑ¯µÄ²Ù×÷»òÒÔ»áÔ±Ãû³ÆÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+  //å…¨éƒ¨æŸ¥è¯¢çš„æ“ä½œæˆ–ä»¥ä¼šå‘˜åç§°ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
   public MemberForm selectMemberForm(String name) {
     MemberForm member = null;
     try {
@@ -85,7 +85,7 @@ public class MemberDao {
     return member;
   }
 
-//É¾³ı²Ù×÷
+//åˆ é™¤æ“ä½œ
   public boolean deleteMember(Integer id) {
     try {
       ps = connection.prepareStatement("delete from tb_member where id=?");
@@ -100,7 +100,7 @@ public class MemberDao {
     }
   }
 
-//Ìí¼ÓĞÅÏ¢
+//æ·»åŠ ä¿¡æ¯
   public void insertMember(MemberForm form) {
     try {
       ps = connection.prepareStatement("insert into tb_member values (null,?,?,?,?,?,?,?,?)");
@@ -119,7 +119,7 @@ public class MemberDao {
     }
   }
 
-  //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼şĞŞ¸ÄĞÅÏ¢
+  //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶ä¿®æ”¹ä¿¡æ¯
   public void updateMember(MemberForm form) {
     try {
       ps = connection.prepareStatement("update tb_member set name=?,password=?,reallyName=?,age=?,profession=?,email=?,question=?,result=? where id=?");
@@ -142,7 +142,7 @@ public class MemberDao {
 
 
 
-//È«²¿²éÑ¯ĞÅÏ¢²Ù×÷
+//å…¨éƒ¨æŸ¥è¯¢ä¿¡æ¯æ“ä½œ
   public List selectMember() {
     List list = new ArrayList();
     MemberForm member = null;
@@ -169,7 +169,7 @@ public class MemberDao {
     return list;
   }
 
-//ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+//ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
   public MemberForm selectOneMember(Integer id) {
     MemberForm member = null;
     try {

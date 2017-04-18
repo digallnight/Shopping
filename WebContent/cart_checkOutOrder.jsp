@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="java.util.*"%>
 <%@ page import="com.wy.domain.OrderDetailForm"%>
 <%@ page import="com.wy.domain.OrderForm"%>
@@ -8,12 +8,12 @@
 <jsp:useBean id="orderDao" scope="page" class="com.wy.dao.OrderDao"/>
 <jsp:useBean id="orderDetailDao" scope="page" class="com.wy.dao.OrderDetailDao"/>
 <%
-request.setCharacterEncoding("gb2312");
+request.setCharacterEncoding("utf-8");
 OrderForm order=new OrderForm();
 OrderDetailForm orderDetail=new OrderDetailForm();
 SellGoodsForm sellGoodsForm=new SellGoodsForm();
 String number=request.getParameter("number").trim();
-//ÏÈÌí¼Ó¶©µ¥±í
+//å…ˆæ·»åŠ è®¢å•è¡¨
 order.setNumber(number);
 order.setName(request.getParameter("name"));
 order.setReallyName(request.getParameter("reallyName"));
@@ -25,7 +25,7 @@ order.setBz(request.getParameter("bz"));
 order.setSign("0");
 orderDao.insertOrderDetail(order);
 
-//È»ºóÌí¼ÓÉÌÆ·µÄÃ÷×ĞÏ¸±í
+//ç„¶åæ·»åŠ å•†å“çš„æ˜ä»”ç»†è¡¨
 Vector cart=(Vector)session.getAttribute("cart");
 for(int i=0;i<cart.size();i++){
   SellGoodsForm form=(SellGoodsForm)cart.elementAt(i);
@@ -36,5 +36,5 @@ for(int i=0;i<cart.size();i++){
  goodsDao.updateGoodsNumber(form.number,new Integer(form.ID));
  orderDetailDao.insertOrderDetail(orderDetail);
 }
-out.println("<script language='javascript'>alert('Çë¼Ç×¡¶©µ¥±àºÅ');window.location.href='cart_clear.jsp';</script>");
+out.println("<script language='javascript'>alert('è¯·è®°ä½è®¢å•ç¼–å·');window.location.href='cart_clear.jsp';</script>");
 %>

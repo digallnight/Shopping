@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.SmallTypeForm"%>
@@ -8,9 +8,9 @@ List list=(List)request.getAttribute("list");
 int number=Integer.parseInt((String)request.getAttribute("number"));
 int maxPage=Integer.parseInt((String)request.getAttribute("maxPage"));
 int pageNumber=Integer.parseInt((String)request.getAttribute("pageNumber"));
-int start=number*6;//¿ªÊ¼ÌõÊı
-int over=(number+1)*6;//½áÊøÌõÊı
-int count=pageNumber-over;//»¹Ê£¶àÉÙÌõ¼ÇÂ¼
+int start=number*6;//å¼€å§‹æ¡æ•°
+int over=(number+1)*6;//ç»“æŸæ¡æ•°
+int count=pageNumber-over;//è¿˜å‰©å¤šå°‘æ¡è®°å½•
 
 if(count<=0){
   over=pageNumber;
@@ -19,8 +19,8 @@ if(count<=0){
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>µç×ÓÉÌ³ÇµÄºóÌ¨</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç”µå­å•†åŸçš„åå°</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css">
 <body>
@@ -42,7 +42,7 @@ if(count<=0){
 	
         <table width="610" height="25" border="0" cellpadding="0" cellspacing="0" background="image/bg_02.jpg">
           <tr>
-            <td><div align="center"><strong>ÉÌÆ·Ğ¡Àà±ğ²éÑ¯</strong></div></td>
+            <td><div align="center"><strong>å•†å“å°ç±»åˆ«æŸ¥è¯¢</strong></div></td>
           </tr>
         </table>
         <br>
@@ -50,12 +50,12 @@ if(count<=0){
 
 	  <table width="90%"  border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#CCCCCC">
         <tr>
-          <td width="10%" height="25"><div align="center">Êı¾İ±àºÅ</div></td>
-          <td width="18%"><div align="center">Ğ¡Àà±ğÃû³Æ</div></td>
-		  <td width="20%"><div align="center">ÊôÓÚ´óÀà±ğÃû³Æ</div></td>
-          <td width="27%"><div align="center">´´½¨Ê±¼ä</div></td>
+          <td width="10%" height="25"><div align="center">æ•°æ®ç¼–å·</div></td>
+          <td width="18%"><div align="center">å°ç±»åˆ«åç§°</div></td>
+		  <td width="20%"><div align="center">å±äºå¤§ç±»åˆ«åç§°</div></td>
+          <td width="27%"><div align="center">åˆ›å»ºæ—¶é—´</div></td>
 
-          <td width="25%"><div align="center">²Ù×÷</div></td>
+          <td width="25%"><div align="center">æ“ä½œ</div></td>
         </tr>
 		     <%for(int i=start;i<over;i++){
       SmallTypeForm form=(SmallTypeForm)list.get(i);
@@ -72,9 +72,9 @@ if(count<=0){
        
 		 <td>  <%if(request.getParameter("bigId")==null){%>
 		   <div align="center">   
-		  <a href="smallTypeAction.do?action=3&id=<%=form.getId()%>">É¾³ı</a> </div>
+		  <a href="smallTypeAction.do?action=3&id=<%=form.getId()%>">åˆ é™¤</a> </div>
 		   <%}else{%>
-		 <div align="center">  ÎŞ²Ù×÷ </div>
+		 <div align="center">  æ— æ“ä½œ </div>
 		  <%}%></td>
 		 
       <%}%>  </tr>
@@ -82,16 +82,16 @@ if(count<=0){
 	  <br>
 	  <table width="90%"  border="0" align="center" cellpadding="0" cellspacing="0">
         <tr align="center">
-          <td width="13%">¹²Îª<%=maxPage%>Ò³</td>
-          <td width="16%">¹²ÓĞ<%=pageNumber%>Ìõ¼ÇÂ¼</td>
-          <td width="14%">µ±Ç°ÎªµÚ<%=number+1%>Ò³</td>
+          <td width="13%">å…±ä¸º<%=maxPage%>é¡µ</td>
+          <td width="16%">å…±æœ‰<%=pageNumber%>æ¡è®°å½•</td>
+          <td width="14%">å½“å‰ä¸ºç¬¬<%=number+1%>é¡µ</td>
           <td width="19%"><%if((number+1)==1){%>
-      ÉÏÒ»Ò³
+      ä¸Šä¸€é¡µ
         <%}else{%>
 		<%if(request.getParameter("bigId")==null){%>
-        <a href="smallTypeAction.do?action=0&i=<%=number-1%>">ÉÏÒ»Ò³</a>
+        <a href="smallTypeAction.do?action=0&i=<%=number-1%>">ä¸Šä¸€é¡µ</a>
 		<%}else{%>
-		 <a href="smallTypeAction.do?action=6&i=<%=number-1%>&bigId=<%=request.getParameter("bigId")%>">ÉÏÒ»Ò³</a>
+		 <a href="smallTypeAction.do?action=6&i=<%=number-1%>&bigId=<%=request.getParameter("bigId")%>">ä¸Šä¸€é¡µ</a>
 		
 		<%}}%>
 		
@@ -99,12 +99,12 @@ if(count<=0){
 		</td>
           
           <td width="18%"><%if(maxPage<=(number+1)){%>
-            ÏÂÒ»Ò³
+            ä¸‹ä¸€é¡µ
               <%}else{%>
 			  <%if(request.getParameter("bigId")==null){%>
-        <a href="smallTypeAction.do?action=0&i=<%=number+1%>">ÏÂÒ»Ò³</a>
+        <a href="smallTypeAction.do?action=0&i=<%=number+1%>">ä¸‹ä¸€é¡µ</a>
 		<%}else{%>
-             <a href="smallTypeAction.do?action=6&i=<%=number+1%>&bigId=<%=request.getParameter("bigId")%>">ÏÂÒ»Ò³</a>
+             <a href="smallTypeAction.do?action=6&i=<%=number+1%>&bigId=<%=request.getParameter("bigId")%>">ä¸‹ä¸€é¡µ</a>
 			  
 			  <%}}%></td>
           
@@ -112,7 +112,7 @@ if(count<=0){
         
           
 			<%if(request.getParameter("bigId")==null){%>
-			  <td width="20%"><a href="bg-smallTypeInsert.jsp">Ìí¼ÓĞ¡Àà±ğ&nbsp;</a></td>
+			  <td width="20%"><a href="bg-smallTypeInsert.jsp">æ·»åŠ å°ç±»åˆ«&nbsp;</a></td>
 			<%}else{%><%}%>
 			
 

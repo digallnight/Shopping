@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@page import="com.wy.domain.MemberForm"%>
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>会员登录结果</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>浼氬憳鐧诲綍缁撴灉</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css">
 

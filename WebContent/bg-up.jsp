@@ -1,9 +1,9 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <jsp:useBean id="countTime" class="com.wy.tool.CountTime" scope="request"/>
 <%@ page import="com.wy.domain.ManagerForm"%>
 <%
 if(session.getAttribute("manager")==null){
-out.print("<script language=javascript>alert('ÄúÒÑ¾­Óë·şÎñÆ÷¶Ï¿ªÁ¬½Ó£¬ÇëÖØĞÂµÇÂ¼£¡');window.location.href='bg-land.jsp';</script>");
+out.print("<script language=javascript>alert('æ‚¨å·²ç»ä¸æœåŠ¡å™¨æ–­å¼€è¿æ¥ï¼Œè¯·é‡æ–°ç™»å½•ï¼');window.location.href='bg-land.jsp';</script>");
 }else{
 ManagerForm manager=(ManagerForm)session.getAttribute("manager");
 %>
@@ -12,7 +12,7 @@ ManagerForm manager=(ManagerForm)session.getAttribute("manager");
     <td valign="top"><table width="770" border="0" align="center">
       <tr >
         <td width="413" height="53" valign="bottom"><div align="right"></div></td>
-        <td width="347" valign="bottom" align="right"><font color="#FFFFFF"><a href="goodsAction.do?action=0" class="a2">ÉÌÆ·²éÑ¯</a> | <a href="bigTypeAction.do?action=0" class="a2">´óÀà±ğ²éÑ¯</a> | <a href="smallTypeAction.do?action=0" class="a2">Ğ¡Àà±ğ²éÑ¯</a> | <a href="orderAction.do?action=0" class="a2">·µ»ØÊ×Ò³</a></font></td>
+        <td width="347" valign="bottom" align="right"><font color="#FFFFFF"><a href="goodsAction.do?action=0" class="a2">å•†å“æŸ¥è¯¢</a> | <a href="bigTypeAction.do?action=0" class="a2">å¤§ç±»åˆ«æŸ¥è¯¢</a> | <a href="smallTypeAction.do?action=0" class="a2">å°ç±»åˆ«æŸ¥è¯¢</a> | <a href="orderAction.do?action=0" class="a2">è¿”å›é¦–é¡µ</a></font></td>
       </tr>
     </table></td>
   </tr>
@@ -20,8 +20,8 @@ ManagerForm manager=(ManagerForm)session.getAttribute("manager");
 <table width="788" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#000000">
   <tr>
     <td width="15" height="25">&nbsp;</td>
-    <td width="579"><font color="#FFFFFF">µ±Ç°µÇÂ¼£º<%=manager.getAccount()%></font></td>
-    <td width="194"><font color="#FFFFFF">½ñÌìÊÇ<%=countTime.currentlyTime()%></font></td>
+    <td width="579"><font color="#FFFFFF">å½“å‰ç™»å½•ï¼š<%=manager.getAccount()%></font></td>
+    <td width="194"><font color="#FFFFFF">ä»Šå¤©æ˜¯<%=countTime.currentlyTime()%></font></td>
   </tr>
 </table>
 <%}%>

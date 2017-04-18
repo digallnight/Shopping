@@ -1,11 +1,11 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
 td {
 	font-size: 9pt;	color: #000000;
 }
 
 
-/*¶Ô¹ÜÀíÔ±µÇÂ¼ºóÌ¨µÄ³¬Á´½ÓµÄÑùÊ½*/
+/*å¯¹ç®¡ç†å‘˜ç™»å½•åŽå°çš„è¶…é“¾æŽ¥çš„æ ·å¼*/
 .a1:link {    
 	COLOR: #FEAE00; TEXT-DECORATION: underline; font-size:12px;
 }
@@ -18,19 +18,19 @@ td {
 .a1:hover {   
 	COLOR: #FEAE00; text-decoration:underline font-size:12px;
 }
-/*ÉèÖÃ¹ÜÀíÔ±µÇÂ¼Ò³ÃæµÄtextÑùÊ½*/
+/*è®¾ç½®ç®¡ç†å‘˜ç™»å½•é¡µé¢çš„textæ ·å¼*/
 .bgtext{
-	font-family: "ËÎÌå";
+	font-family: "å®‹ä½“";
 	font-size: 9pt;
 	border: 1px solid #E8A10B;
 }
-/*ÉèÖÃ¹ÜÀíÔ±µÇÂ¼Ò³ÃæµÄ°´Å¥ÑùÊ½*/
+/*è®¾ç½®ç®¡ç†å‘˜ç™»å½•é¡µé¢çš„æŒ‰é’®æ ·å¼*/
 .bgButtoninput{
-	font-family: "ËÎÌå";
+	font-family: "å®‹ä½“";
 	font-size: 9pt;
 	border: 0px solid #E8A10B;
 }
-/*ÉèÖÃºóÌ¨Ò³ÃæÖÐÉÌÆ·²éÑ¯µÄÁ´½ÓÑùÊ½£¨ÉÏ°ë²¿·Ö£©*/
+/*è®¾ç½®åŽå°é¡µé¢ä¸­å•†å“æŸ¥è¯¢çš„é“¾æŽ¥æ ·å¼ï¼ˆä¸ŠåŠéƒ¨åˆ†ï¼‰*/
 .a2:link {    
 	COLOR: #ffffff; TEXT-DECORATION: none; font-size:12px;
 }
@@ -43,7 +43,7 @@ td {
 .a2:hover {   
 	COLOR: #FEAE00; text-decoration:none font-size:12px;
 }
-/*ÉèÖÃºóÌ¨Ò³ÃæÖÐ×ó²à²¿·ÖµÄ³¬Á´½Ó£¨ÉÏ°ë²¿·Ö£©*/
+/*è®¾ç½®åŽå°é¡µé¢ä¸­å·¦ä¾§éƒ¨åˆ†çš„è¶…é“¾æŽ¥ï¼ˆä¸ŠåŠéƒ¨åˆ†ï¼‰*/
 .a3:link {    
 	COLOR: #855106; TEXT-DECORATION: none; font-size:12px;
 }
@@ -56,7 +56,7 @@ td {
 .a3:hover {   
 	COLOR: #FF6600; text-decoration:none font-size:12px;
 }
-/*È«¾ÖµÄ³¬Á´½Ó*/
+/*å…¨å±€çš„è¶…é“¾æŽ¥*/
 a:hover {
 	font-size: 9pt;	color: #FF690C;
 }
@@ -64,14 +64,14 @@ a {
 	font-size: 9pt;	text-decoration: none;	color: #000000;
 	noline:expression(this.onfocus=this.blur);
 }
-/*½«Ìá½»°´Å¥µÄ±ß¿òÈ¥µô*/
+/*å°†æäº¤æŒ‰é’®çš„è¾¹æ¡†åŽ»æŽ‰*/
 .input1{
-	font-family: "ËÎÌå";
+	font-family: "å®‹ä½“";
 	font-size: 9pt;
 	color: #333333;
 	border: 0px solid #999999;
 }
-/*¶Ô¼òÌåÖÐÎÄºÍ·±ÌåÖÐÎÄµÄ³¬Á´½ÓµÄÑùÊ½*/
+/*å¯¹ç®€ä½“ä¸­æ–‡å’Œç¹ä½“ä¸­æ–‡çš„è¶…é“¾æŽ¥çš„æ ·å¼*/
 .a4:link {    
 	COLOR: #FFFFFF; TEXT-DECORATION: underline; font-size:12px;
 }
@@ -84,7 +84,7 @@ a {
 .a4:hover {   
 	COLOR: #FFFFFF; text-decoration:underline font-size:12px;
 }
-/*½øÈëºóÌ¨µÄ³¬Á´½ÓµÄÑùÊ½*/
+/*è¿›å…¥åŽå°çš„è¶…é“¾æŽ¥çš„æ ·å¼*/
 .a5:link {    
 	COLOR: #F0F0F0; TEXT-DECORATION: underline; font-size:12px;
 }
@@ -123,13 +123,13 @@ img{
 	font-size: 9pt;	color: #1980DB;
 }
 .btn_grey {
-	font-family: "ËÎÌå";	font-size: 9pt;color: #333333;	
+	font-family: "å®‹ä½“";	font-size: 9pt;color: #333333;	
 	background-color: #eeeeee;cursor: hand;padding:1px;height:19px;
 	border-top: 1px solid #FFFFFF;border-right:1px solid #666666;
 	border-bottom: 1px solid #666666;border-left: 1px solid #FFFFFF;
 }
 input{
-	font-family: "ËÎÌå";
+	font-family: "å®‹ä½“";
 	font-size: 9pt;
 	color: #333333;
 	border: 1px solid #999999;
@@ -161,7 +161,7 @@ body {
 	background-image:url(../image/bg.gif)
 }
 .textarea {
-	font-family: "ËÎÌå";
+	font-family: "å®‹ä½“";
 	font-size: 9pt;
 	color: #333333;
 	border: 1px solid #999999;

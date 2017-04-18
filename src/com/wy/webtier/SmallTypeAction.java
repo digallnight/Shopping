@@ -10,7 +10,7 @@ import org.apache.struts.action.Action;
 import com.wy.dao.SmallTypeDao;
 import java.util.List;
 
-//ÉÌÆ·Ğ¡Àà±ğĞÅÏ¢
+//å•†å“å°ç±»åˆ«ä¿¡æ¯
 public class SmallTypeAction
     extends Action {
   private int action;
@@ -23,22 +23,22 @@ public class SmallTypeAction
     dao = new SmallTypeDao();
     switch (action) {
       case 0: {
-        return smallTypeSelect(mapping, form, request, response); //È«²¿²éÑ¯Ğ¡Àà±ğĞÅÏ¢
+        return smallTypeSelect(mapping, form, request, response); //å…¨éƒ¨æŸ¥è¯¢å°ç±»åˆ«ä¿¡æ¯
       }
       case 2: {
-        return smallTypeInsert(mapping, form, request, response); //Ìí¼ÓĞ¡Àà±ğĞÅÏ¢
+        return smallTypeInsert(mapping, form, request, response); //æ·»åŠ å°ç±»åˆ«ä¿¡æ¯
       }
       case 3: {
-        return smallTypeDelete(mapping, form, request, response); //É¾³ıĞ¡Àà±ğĞÅÏ¢
+        return smallTypeDelete(mapping, form, request, response); //åˆ é™¤å°ç±»åˆ«ä¿¡æ¯
       }
       case 4: {
-        return smallTypeSelectOne(mapping, form, request, response); //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯Ğ¡Àà±ğĞÅÏ¢
+        return smallTypeSelectOne(mapping, form, request, response); //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢å°ç±»åˆ«ä¿¡æ¯
       }
       case 5: {
-        return smallTypeUpdate(mapping, form, request, response); //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼şĞŞ¸ÄĞ¡Àà±ğĞÅÏ¢
+        return smallTypeUpdate(mapping, form, request, response); //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶ä¿®æ”¹å°ç±»åˆ«ä¿¡æ¯
       }
       case 6: {
-        return smallTypeSelectBigId(mapping, form, request, response); //ÒÔÍâ¼ü±àºÅÎªÌõ¼şĞŞ¸ÄĞ¡Àà±ğĞÅÏ¢
+        return smallTypeSelectBigId(mapping, form, request, response); //ä»¥å¤–é”®ç¼–å·ä¸ºæ¡ä»¶ä¿®æ”¹å°ç±»åˆ«ä¿¡æ¯
       }
     }
 
@@ -47,14 +47,14 @@ public class SmallTypeAction
         "Method $execute() not yet implemented.");
   }
 
-  //ÒÔÍâ¼ü±àºÅÎªÌõ¼şĞŞ¸ÄĞ¡Àà±ğĞÅÏ¢
+  //ä»¥å¤–é”®ç¼–å·ä¸ºæ¡ä»¶ä¿®æ”¹å°ç±»åˆ«ä¿¡æ¯
   public ActionForward smallTypeSelectBigId(ActionMapping mapping,
                                             ActionForm form,
                                             HttpServletRequest request,
                                             HttpServletResponse response) {
     List list = dao.selectOneBigId(Integer.valueOf(request.getParameter("bigId")));
-    int pageNumber = list.size(); //¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-    int maxPage = pageNumber; //¼ÆËãÓĞ¶àÉÙÒ³Êı
+    int pageNumber = list.size(); //è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+    int maxPage = pageNumber; //è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
     String number = request.getParameter("i");
     if (maxPage % 6 == 0) {
       maxPage = maxPage / 6;
@@ -72,7 +72,7 @@ public class SmallTypeAction
     return mapping.findForward("smallTypeSelect");
   }
 
-  //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼şĞŞ¸ÄĞ¡Àà±ğĞÅÏ¢
+  //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶ä¿®æ”¹å°ç±»åˆ«ä¿¡æ¯
   public ActionForward smallTypeUpdate(ActionMapping mapping,
                                        ActionForm form,
                                        HttpServletRequest request,
@@ -82,11 +82,11 @@ public class SmallTypeAction
     smallTypeForm.setId(Integer.valueOf(request.getParameter("id")));
     smallTypeForm.setSmallName(request.getParameter("name"));
     dao.updateSmall(smallTypeForm);
-    request.setAttribute("success", "ĞŞ¸ÄĞ¡Àà±ğĞÅÏ¢³É¹¦");
+    request.setAttribute("success", "ä¿®æ”¹å°ç±»åˆ«ä¿¡æ¯æˆåŠŸ");
     return mapping.findForward("smallTypeOperation");
   }
 
-  //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯Ğ¡Àà±ğĞÅÏ¢
+  //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢å°ç±»åˆ«ä¿¡æ¯
   public ActionForward smallTypeSelectOne(ActionMapping mapping,
                                           ActionForm form,
                                           HttpServletRequest request,
@@ -97,21 +97,21 @@ public class SmallTypeAction
     return mapping.findForward("smallTypeSelectOne");
   }
 
-  //É¾³ıĞ¡Àà±ğĞÅÏ¢
+  //åˆ é™¤å°ç±»åˆ«ä¿¡æ¯
   public ActionForward smallTypeDelete(ActionMapping mapping,
                                        ActionForm form,
                                        HttpServletRequest request,
                                        HttpServletResponse response) {
 
     if (dao.deleteSmall(Integer.valueOf(request.getParameter("id")))) {
-      request.setAttribute("result", "É¾³ıĞ¡Àà±ğĞÅÏ¢³É¹¦£¡");
+      request.setAttribute("result", "åˆ é™¤å°ç±»åˆ«ä¿¡æ¯æˆåŠŸï¼");
     }else {
-      request.setAttribute("result", "ÉÌÆ·ĞÅÏ¢»¹´æÔÚ´ËÀà±ğ£¬ÇëÏÈÉ¾³ıÉÌÆ·ĞÅÏ¢£¡£¡£¡");
+      request.setAttribute("result", "å•†å“ä¿¡æ¯è¿˜å­˜åœ¨æ­¤ç±»åˆ«ï¼Œè¯·å…ˆåˆ é™¤å•†å“ä¿¡æ¯ï¼ï¼ï¼");
     }
     return mapping.findForward("smallTypeOperation");
   }
 
-  //Ìí¼ÓĞ¡Àà±ğĞÅÏ¢
+  //æ·»åŠ å°ç±»åˆ«ä¿¡æ¯
   public ActionForward smallTypeInsert(ActionMapping mapping,
                                        ActionForm form,
                                        HttpServletRequest request,
@@ -120,19 +120,19 @@ public class SmallTypeAction
     smallTypeForm.setBigId(Integer.valueOf(request.getParameter("bigId")));
     smallTypeForm.setSmallName(request.getParameter("name"));
     dao.insertSmall(smallTypeForm);
-    request.setAttribute("result", "Ìí¼ÓĞ¡Àà±ğĞÅÏ¢³É¹¦");
+    request.setAttribute("result", "æ·»åŠ å°ç±»åˆ«ä¿¡æ¯æˆåŠŸ");
     return mapping.findForward("smallTypeOperation");
   }
 
 
-  //È«²¿²éÑ¯Ğ¡Àà±ğĞÅÏ¢
+  //å…¨éƒ¨æŸ¥è¯¢å°ç±»åˆ«ä¿¡æ¯
   public ActionForward smallTypeSelect(ActionMapping mapping,
                                        ActionForm form,
                                        HttpServletRequest request,
                                        HttpServletResponse response) {
     List list = dao.selectSmall();
-    int pageNumber = list.size(); //¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-    int maxPage = pageNumber; //¼ÆËãÓĞ¶àÉÙÒ³Êı
+    int pageNumber = list.size(); //è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+    int maxPage = pageNumber; //è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
     String number = request.getParameter("i");
     if (maxPage % 6 == 0) {
       maxPage = maxPage / 6;

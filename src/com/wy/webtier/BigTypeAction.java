@@ -10,7 +10,7 @@ import java.util.List;
 import com.wy.dao.BigTypeDao;
 
 
-//ÉÌÆ·´óÀà±ğĞÅÏ¢
+//å•†å“å¤§ç±»åˆ«ä¿¡æ¯
 public class BigTypeAction
     extends Action {
 	
@@ -26,13 +26,13 @@ public class BigTypeAction
     this.action = Integer.parseInt(request.getParameter("action"));
     switch (action) {
       case 0: {
-        return bigTypeSelect(mapping, form, request, response); //È«²¿²éÑ¯ÉÌÆ·ĞÅÏ¢
+        return bigTypeSelect(mapping, form, request, response); //å…¨éƒ¨æŸ¥è¯¢å•†å“ä¿¡æ¯
       }
       case 2: {
-        return bigTypeInsert(mapping, form, request, response); //Ìí¼Ó´óÀà±ğµÄĞÅÏ¢
+        return bigTypeInsert(mapping, form, request, response); //æ·»åŠ å¤§ç±»åˆ«çš„ä¿¡æ¯
       }
       case 3: {
-        return bigTypeDelete(mapping, form, request, response); //É¾³ı´óÀà±ğµÄĞÅÏ¢
+        return bigTypeDelete(mapping, form, request, response); //åˆ é™¤å¤§ç±»åˆ«çš„ä¿¡æ¯
       }
     }
 
@@ -41,16 +41,16 @@ public class BigTypeAction
   }
 
 
-//É¾³ı´óÀà±ğµÄĞÅÏ¢
+//åˆ é™¤å¤§ç±»åˆ«çš„ä¿¡æ¯
   public ActionForward bigTypeDelete(ActionMapping mapping,
                                      ActionForm form,
                                      HttpServletRequest request,
                                      HttpServletResponse response) {
     if (dao.deleteBig(Integer.valueOf(request.getParameter("id")))) {
-      request.setAttribute("result", "É¾³ı´óÀà±ğĞÅÏ¢³É¹¦");
+      request.setAttribute("result", "åˆ é™¤å¤§ç±»åˆ«ä¿¡æ¯æˆåŠŸ");
     }
     else {
-      request.setAttribute("result", "Ğ¡Àà±ğ»¹´æÔÚ´ËĞÅÏ¢£¬ÇëÏÈÉ¾³ıĞ¡Àà±ğĞÅÏ¢");
+      request.setAttribute("result", "å°ç±»åˆ«è¿˜å­˜åœ¨æ­¤ä¿¡æ¯ï¼Œè¯·å…ˆåˆ é™¤å°ç±»åˆ«ä¿¡æ¯");
     }
 
     return mapping.findForward("resultBigType");
@@ -59,26 +59,26 @@ public class BigTypeAction
   
   
   
-//Ìí¼Ó´óÀà±ğµÄĞÅÏ¢
+//æ·»åŠ å¤§ç±»åˆ«çš„ä¿¡æ¯
   public ActionForward bigTypeInsert(ActionMapping mapping,
                                      ActionForm form,
                                      HttpServletRequest request,
                                      HttpServletResponse response) {
     dao.insertBig(request.getParameter("name"));
-    request.setAttribute("result", "Ìí¼Ó´óÀà±ğĞÅÏ¢³É¹¦");
+    request.setAttribute("result", "æ·»åŠ å¤§ç±»åˆ«ä¿¡æ¯æˆåŠŸ");
     return mapping.findForward("resultBigType");
   }
 
 
 
-//È«²¿²éÑ¯ÉÌÆ·ĞÅÏ¢
+//å…¨éƒ¨æŸ¥è¯¢å•†å“ä¿¡æ¯
   public ActionForward bigTypeSelect(ActionMapping mapping,
                                      ActionForm form,
                                      HttpServletRequest request,
                                      HttpServletResponse response) {
     List list = dao.selectBig();
-    int pageNumber = list.size(); //¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-    int maxPage = pageNumber; //¼ÆËãÓĞ¶àÉÙÒ³Êı
+    int pageNumber = list.size(); //è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+    int maxPage = pageNumber; //è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
     String number = request.getParameter("i");
     if (maxPage % 6 == 0) {
       maxPage = maxPage / 6;

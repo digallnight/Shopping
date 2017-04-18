@@ -5,17 +5,17 @@ import java.util.*;
 import com.wy.domain.ManagerForm;
 import com.wy.tool.JDBConnection;
 
-//¶Ô¹ÜÀíÔ±µÄ²Ù×÷
+//å¯¹ç®¡ç†å‘˜çš„æ“ä½œ
 public class ManagerDao {
-  private Connection connection = null; //¶¨ÒåÁ¬½ÓµÄ¶ÔÏó
-  private PreparedStatement ps = null; //¶¨ÒåÔ¤×¼±¸µÄ¶ÔÏó
-  private JDBConnection jdbc = null; //¶¨ÒåÊı¾İ¿âÁ¬½Ó¶ÔÏó
+  private Connection connection = null; //å®šä¹‰è¿æ¥çš„å¯¹è±¡
+  private PreparedStatement ps = null; //å®šä¹‰é¢„å‡†å¤‡çš„å¯¹è±¡
+  private JDBConnection jdbc = null; //å®šä¹‰æ•°æ®åº“è¿æ¥å¯¹è±¡
   public ManagerDao() {
     jdbc = new JDBConnection();
-    connection = jdbc.connection; //ÀûÓÃ¹¹Ôì·½·¨È¡µÃÊı¾İ¿âÁ¬½Ó
+    connection = jdbc.connection; //åˆ©ç”¨æ„é€ æ–¹æ³•å–å¾—æ•°æ®åº“è¿æ¥
   }
 
-  //¶Ô¹ÜÀíÔ±±íµÄ²éÑ¯·½·¨
+  //å¯¹ç®¡ç†å‘˜è¡¨çš„æŸ¥è¯¢æ–¹æ³•
   public void insertManager(ManagerForm form) {
     try {
 
@@ -32,7 +32,7 @@ public class ManagerDao {
     }
   }
 
-  //ĞŞ¸Ä¹ÜÀíÔ±ÃÜÂëµÄ·½·¨
+  //ä¿®æ”¹ç®¡ç†å‘˜å¯†ç çš„æ–¹æ³•
   public void updateManagerPassword(ManagerForm form) {
     try {
       ps = connection.prepareStatement("update tb_manager set password=? where account=?");
@@ -47,7 +47,7 @@ public class ManagerDao {
   }
 
 
-  //É¾³ı¹ÜÀíÔ±µÄ²Ù×÷
+  //åˆ é™¤ç®¡ç†å‘˜çš„æ“ä½œ
   public void deleteManager(Integer id) {
     try {
       ps = connection.prepareStatement("delete from tb_manager where id=?");
@@ -60,7 +60,7 @@ public class ManagerDao {
     }
   }
 
-  //²éÑ¯È«²¿¹ÜÀíÔ±µÄĞÅÏ¢
+  //æŸ¥è¯¢å…¨éƒ¨ç®¡ç†å‘˜çš„ä¿¡æ¯
   public List selectManager() {
     List list = new ArrayList();
     ManagerForm manager = null;
@@ -83,7 +83,7 @@ public class ManagerDao {
     return list;
   }
 
-//ÒÔ¹ÜÀíÔ±ÕËºÅÎªÌõ¼ş²éÑ¯¹ÜÀíÔ±ĞÅÏ¢
+//ä»¥ç®¡ç†å‘˜è´¦å·ä¸ºæ¡ä»¶æŸ¥è¯¢ç®¡ç†å‘˜ä¿¡æ¯
   public ManagerForm selectOne(String account) {
     ManagerForm manager = null;
     try {

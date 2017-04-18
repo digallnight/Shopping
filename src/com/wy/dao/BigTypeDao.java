@@ -5,17 +5,17 @@ import java.sql.*;
 import java.util.*;
 import com.wy.domain.BigTypeForm;
 
-//¶ÔÉÌÆ·´óÀà±ğĞÅÏ¢µÄ²Ù×÷
+//å¯¹å•†å“å¤§ç±»åˆ«ä¿¡æ¯çš„æ“ä½œ
 public class BigTypeDao {
-  private Connection connection = null; //¶¨ÒåÁ¬½ÓµÄ¶ÔÏó
-  private PreparedStatement ps = null; //¶¨ÒåÔ¤×¼±¸µÄ¶ÔÏó
-  private JDBConnection jdbc = null; //¶¨ÒåÊı¾İ¿âÁ¬½Ó¶ÔÏó
+  private Connection connection = null; //å®šä¹‰è¿æ¥çš„å¯¹è±¡
+  private PreparedStatement ps = null; //å®šä¹‰é¢„å‡†å¤‡çš„å¯¹è±¡
+  private JDBConnection jdbc = null; //å®šä¹‰æ•°æ®åº“è¿æ¥å¯¹è±¡
   public BigTypeDao() {
     jdbc = new JDBConnection();
-    connection = jdbc.connection; //ÀûÓÃ¹¹Ôì·½·¨È¡µÃÊı¾İ¿âÁ¬½Ó
+    connection = jdbc.connection; //åˆ©ç”¨æ„é€ æ–¹æ³•å–å¾—æ•°æ®åº“è¿æ¥
   }
 
-//ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯´óÀà±ğµÄÃû³Æ
+//ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢å¤§ç±»åˆ«çš„åç§°
   public String selectName(Integer id) {
     String name = null;
     try {
@@ -32,7 +32,7 @@ public class BigTypeDao {
     return name;
   }
 
-//É¾³ı²Ù×÷
+//åˆ é™¤æ“ä½œ
   public boolean deleteBig(Integer id) {
     try {
       ps = connection.prepareStatement("delete from tb_bigType where id=?");
@@ -48,7 +48,7 @@ public class BigTypeDao {
   }
 
 
-  //Ìí¼Ó²Ù×÷
+  //æ·»åŠ æ“ä½œ
   public void insertBig(String name) {
     try {
       ps = connection.prepareStatement("insert into tb_bigType values (null,?,now())");
@@ -61,7 +61,7 @@ public class BigTypeDao {
     }
   }
 
-  //È«²¿²éÑ¯µÄ²Ù×÷
+  //å…¨éƒ¨æŸ¥è¯¢çš„æ“ä½œ
   public List selectBig() {
     List list = new ArrayList();
     BigTypeForm big = null;

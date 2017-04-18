@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.MemberForm"%>
@@ -13,8 +13,8 @@ MemberForm form=(MemberForm)request.getAttribute("form");
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>µç×ÓÉÌ³ÇµÄºóÌ¨</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç”µå­å•†åŸçš„åå°</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css">
 <body>
@@ -26,42 +26,42 @@ MemberForm form=(MemberForm)request.getAttribute("form");
 	
         <table width="610" height="25" border="0" cellpadding="0" cellspacing="0" background="image/bg_02.jpg">
           <tr>
-            <td><div align="center"><strong>²é¿´»áÔ±µÄÏêÏ¸Çé¿ö</strong></div></td>
+            <td><div align="center"><strong>æŸ¥çœ‹ä¼šå‘˜çš„è¯¦ç»†æƒ…å†µ</strong></div></td>
           </tr>
         </table>
         <br>
 
  <table width="71%" height="130"  border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#CCCCCC">
           <tr>
-            <td width="20%" height="26"><div align="center">Êı¾İ±àºÅ</div></td>
+            <td width="20%" height="26"><div align="center">æ•°æ®ç¼–å·</div></td>
             <td width="31%" bgcolor="#FFFFFF"><div align="center"><%=form.getId()%></div></td>
-            <td width="20%"><div align="center">»áÔ±ÕËºÅ</div></td>
+            <td width="20%"><div align="center">ä¼šå‘˜è´¦å·</div></td>
             <td width="31%" bgcolor="#FFFFFF"><div align="center"><%=form.getName()%></div></td>
           </tr>
           <tr>
-            <td height="25"><div align="center">»áÔ±ĞÕÃû</div></td>
+            <td height="25"><div align="center">ä¼šå‘˜å§“å</div></td>
             <td bgcolor="#FFFFFF"><div align="center"><%=form.getReallyName()%></div></td>
-            <td><div align="center">»áÔ±ÄêÁä</div></td>
-            <td bgcolor="#FFFFFF"><div align="center"><%=form.getAge()%>Ëê</div></td>
+            <td><div align="center">ä¼šå‘˜å¹´é¾„</div></td>
+            <td bgcolor="#FFFFFF"><div align="center"><%=form.getAge()%>å²</div></td>
           </tr>
           <tr>
-            <td height="27"><div align="center">»áÔ±Ö°Òµ</div></td>
+            <td height="27"><div align="center">ä¼šå‘˜èŒä¸š</div></td>
             <td bgcolor="#FFFFFF"><div align="center"><%=form.getProfession()%></div></td>
-            <td><div align="center">µç×ÓÓÊ¼ş</div></td>
+            <td><div align="center">ç”µå­é‚®ä»¶</div></td>
             <td bgcolor="#FFFFFF"><div align="center"><%=form.getEmail()%></div></td>
           </tr>
 
           <tr>
-           <td height="27"><div align="center">ÎÊ&nbsp;&nbsp;&nbsp;&nbsp;Ìâ</div></td>
+           <td height="27"><div align="center">é—®&nbsp;&nbsp;&nbsp;&nbsp;é¢˜</div></td>
             <td bgcolor="#FFFFFF"><div align="center"><%=form.getQuestion()%></div></td>
-            <td><div align="center">´ğ&nbsp;&nbsp;&nbsp;&nbsp;°¸</div></td>
+            <td><div align="center">ç­”&nbsp;&nbsp;&nbsp;&nbsp;æ¡ˆ</div></td>
             <td bgcolor="#FFFFFF"><div align="center"><%=form.getResult()%></div></td>
           </tr>
       </table>
         <table width="71%"  border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="87%" height="29">&nbsp;</td>
-            <td width="13%"> <a href="javascript:history.back();">·µ»Ø</a></td>
+            <td width="13%"> <a href="javascript:history.back();">è¿”å›</a></td>
           </tr>
         </table>
 

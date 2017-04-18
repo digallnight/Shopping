@@ -4,7 +4,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import javax.servlet.http.HttpServletRequest;
-//商品大类别bean
+//鍟嗗搧澶х被鍒玝ean
 public class BigTypeForm
     extends ActionForm {
   private String bigName="";

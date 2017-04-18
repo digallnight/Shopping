@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.OrderForm"%>
@@ -11,8 +11,8 @@
 <%List list=(List)request.getAttribute("orderDetailList");%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>╣ГвсилЁг╣д╨Сл╗</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Г■╣Е╜░Е∙├Е÷▌Г └Е░▌Е▐╟</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css">
 <body>
@@ -26,44 +26,44 @@
     <td width="618" align="center" valign="top" bgcolor="#FFFFFF"> <br>
         <table width="610" height="25" border="0" cellpadding="0" cellspacing="0" background="image/bg_02.jpg">
           <tr>
-            <td align="center"><strong>╤╘╣╔╨ен╙ё╨<%=orderForm.getNumber()%>╣доЙо╦пео╒</strong></td>
+            <td align="center"><strong>Х╝╒Е█∙Е▐╥Д╦╨О╪ <%=orderForm.getNumber()%>Г └Х╞╕Г╩├Д©║Ф│╞</strong></td>
           </tr>
         </table>
         <br>
 
 <table width="76%"  border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#DCDCDC">
       <tr align="center" >
-        <td width="26%" height="25">╩Ат╠ук╨е</td>
+        <td width="26%" height="25">Д╪ Е▒≤Х╢╕Е▐╥</td>
         <td width="22%" bgcolor="#FFFFFF"><%=orderForm.getName()%></td>
-        <td width="26%">╩Ат╠пуцШ</td>
+        <td width="26%">Д╪ Е▒≤Е╖⌠Е░█</td>
         <td width="22%" bgcolor="#FFFFFF"><%=orderForm.getReallyName()%></td>
       </tr>
       <tr  align="center">
-        <td height="25">км╩У╣Г╩╟</td>
+        <td height="25">И─│Х╢╖Г■╣Х╞²</td>
         <td bgcolor="#FFFFFF"><%=orderForm.getTel()%></td>
-        <td>км╩У╣ьж╥</td>
+        <td>И─│Х╢╖Е°╟Е²─</td>
         <td bgcolor="#FFFFFF"><%=orderForm.getAddress()%></td>
       </tr>
       <tr  align="center">
-        <td height="25">╦╤©Н╥╫й╫</td>
+        <td height="25">Д╩≤Ф╛╬Ф√╧Е╪▐</td>
         <td bgcolor="#FFFFFF"><%=orderForm.getSetMoney()%></td>
-        <td>тккм╥╫й╫</td>
+        <td>Х©░И─│Ф√╧Е╪▐</td>
         <td bgcolor="#FFFFFF"><%=orderForm.getPost()%></td>
       </tr>
       <tr align="center">
-        <td height="25" >╠╦в╒пео╒</td>
+        <td height="25" >Е╓┤ФЁ╗Д©║Ф│╞</td>
         <td bgcolor="#FFFFFF"><%=orderForm.getBz()%></td>
-        <td>╤╘╩Уй╠╪Д</td>
+        <td>Х╝╒Х╢╖Ф≈╤И≈╢</td>
         <td bgcolor="#FFFFFF"><%=orderForm.getCreaTime()%></td>
       </tr>
     </table>
 	<br>
-	    <strong>илф╥оЙо╦пео╒</strong>	  <br><br>
+	    <strong>Е∙├Е⌠│Х╞╕Г╩├Д©║Ф│╞</strong>	  <br><br>
 	    <table width="74%"  border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="#DCDCDC">
           <tr>
-            <td><div align="center">илф╥цШЁф</div></td>
-            <td><div align="center">илф╥йЩа©</div></td>
-            <td><div align="center">илф╥╪ш╦Я</div></td>
+            <td><div align="center">Е∙├Е⌠│Е░█Г╖╟</div></td>
+            <td><div align="center">Е∙├Е⌠│Ф∙╟И┤▐</div></td>
+            <td><div align="center">Е∙├Е⌠│Д╩╥Ф═╪</div></td>
           </tr>
           <%
           float sum=0;
@@ -75,21 +75,21 @@
           <tr bgcolor="#FFFFFF">
             <td><div align="center"><%=goods.selectOneGoods(form.getGoodsId()).getName()%></div></td>
             <td><div align="center"><%=form.getNumber()%></div></td>
-            <td><div align="center"><%=form.getPrice()%>т╙</div></td>
+            <td><div align="center"><%=form.getPrice()%>Е┘┐</div></td>
           </tr><%}%>
       </table>
 	    <br>
-    вэ╫П╤Н:<%=sum%><br>
+    Ф─╩И┤▒И╒²:<%=sum%><br>
     <table width="76%" height="19"  border="0" cellpadding="0" cellspacing="0">
       <tr>
         <td width="72%">
               <div align="left">
                 <%if(orderForm.getSign().equals("1")){%>
-                ря╬╜ЁЖ╩У
+                Е╥╡Г╩▐Е┤╨Х╢╖
                 <%}else{%>
-                ц╩спЁЖ╩У
+                Ф╡║Ф°┴Е┤╨Х╢╖
                 <%}%>
-              </div></td><td width="28%"><div align="right"><a href="javascript:history.go(-1)">╥╣╩ь</a></div></td>
+              </div></td><td width="28%"><div align="right"><a href="javascript:history.go(-1)">Х©■Е⌡·</a></div></td>
       </tr>
     </table>
 

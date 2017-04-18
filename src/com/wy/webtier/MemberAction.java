@@ -13,7 +13,7 @@ import java.util.*;
 
 
 
-//»áÔ±¹ÜÀíAction
+//ä¼šå‘˜ç®¡ç†Action
 public class MemberAction extends Action {
 	private int action;
 	private MemberDao dao = null;
@@ -24,25 +24,25 @@ public class MemberAction extends Action {
 		this.action = Integer.parseInt(request.getParameter("action"));
 		switch (action) {
 		case 0: {
-			return insertMember(mapping, form, request, response); // Ìí¼ÓÔ±¹¤ĞÅÏ¢
+			return insertMember(mapping, form, request, response); // æ·»åŠ å‘˜å·¥ä¿¡æ¯
 		}
 		case 1: {
-			return checkMember(mapping, form, request, response); // »áÔ±µÇÂ¼
+			return checkMember(mapping, form, request, response); // ä¼šå‘˜ç™»å½•
 		}
 		case 2: {
-			return selectMember(mapping, form, request, response); // ²é¿´»áÔ±ĞÅÏ¢
+			return selectMember(mapping, form, request, response); // æŸ¥çœ‹ä¼šå‘˜ä¿¡æ¯
 		}
         case 3: {
-			return selectOneMember(mapping, form, request, response); // ²é¿´»áÔ±µÄÏêÏ¸ĞÅÏ¢
+			return selectOneMember(mapping, form, request, response); // æŸ¥çœ‹ä¼šå‘˜çš„è¯¦ç»†ä¿¡æ¯
 		}
 		case 4: {
-			return deleteMember(mapping, form, request, response); // É¾³ı»áÔ±ĞÅÏ¢
+			return deleteMember(mapping, form, request, response); // åˆ é™¤ä¼šå‘˜ä¿¡æ¯
 		}
 		case 5: {
-			return selectOneMemberHead(mapping, form, request, response); // Ç°Ì¨²éÑ¯»áÔ±µÄÊôĞÔ
+			return selectOneMemberHead(mapping, form, request, response); // å‰å°æŸ¥è¯¢ä¼šå‘˜çš„å±æ€§
 		}
 		case 6: {
-			return updateMemberHead(mapping, form, request, response); // ĞŞ¸Ä»áÔ±ÊôĞÔ
+			return updateMemberHead(mapping, form, request, response); // ä¿®æ”¹ä¼šå‘˜å±æ€§
 		}
 
 		}
@@ -51,17 +51,17 @@ public class MemberAction extends Action {
 				"Method $execute() not yet implemented.");
 	}
 
-	// ĞŞ¸Ä»áÔ±ÊôĞÔ
+	// ä¿®æ”¹ä¼šå‘˜å±æ€§
 	public ActionForward updateMemberHead(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 		MemberForm memberForm = (MemberForm) form;		
 		dao.updateMember(memberForm);
-		request.setAttribute("success", "ĞŞ¸Ä³É¹¦");
+		request.setAttribute("success", "ä¿®æ”¹æˆåŠŸ");
 		return mapping.findForward("operationMember");
 	}
 
-	// Ç°Ì¨²éÑ¯»áÔ±µÄÊôĞÔ
+	// å‰å°æŸ¥è¯¢ä¼šå‘˜çš„å±æ€§
 	public ActionForward selectOneMemberHead(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -70,7 +70,7 @@ public class MemberAction extends Action {
 		return mapping.findForward("selectOneMemberHead");
 	}
 
-	// É¾³ı²Ù×÷
+	// åˆ é™¤æ“ä½œ
 	public ActionForward deleteMember(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) throws IOException {
 	   if (!dao.deleteMember(Integer.valueOf(request.getParameter("id")))) {
@@ -79,7 +79,7 @@ public class MemberAction extends Action {
 		return selectMember(mapping,form,request,response);
 	}
 
-	// ²é¿´»áÔ±ÏêÏ¸ĞÅÏ¢
+	// æŸ¥çœ‹ä¼šå‘˜è¯¦ç»†ä¿¡æ¯
 	public ActionForward selectOneMember(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -88,12 +88,12 @@ public class MemberAction extends Action {
 		return mapping.findForward("selectOneMember");
 	}
 
-	// ²é¿´»áÔ±ĞÅÏ¢
+	// æŸ¥çœ‹ä¼šå‘˜ä¿¡æ¯
 	public ActionForward selectMember(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		List list = dao.selectMember();
-		int pageNumber = list.size(); // ¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-		int maxPage = pageNumber; // ¼ÆËãÓĞ¶àÉÙÒ³Êı
+		int pageNumber = list.size(); // è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+		int maxPage = pageNumber; // è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
 		String number = request.getParameter("i");
 		if (maxPage % 6 == 0) {
 			maxPage = maxPage / 6;
@@ -110,31 +110,31 @@ public class MemberAction extends Action {
 		return mapping.findForward("selectMember");
 	}
 
-	// »áÔ±µÇÂ¼
+	// ä¼šå‘˜ç™»å½•
 	public ActionForward checkMember(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		String name = request.getParameter("name");
 		MemberForm memberForm = dao.selectMemberForm(name);
 		if (memberForm==null||memberForm.equals("")) {
-			request.setAttribute("result", "²»´æÔÚ´Ë»áÔ±£¬ÇëÖØĞÂµÇÂ¼£¡£¡£¡");
+			request.setAttribute("result", "ä¸å­˜åœ¨æ­¤ä¼šå‘˜ï¼Œè¯·é‡æ–°ç™»å½•ï¼ï¼ï¼");
 		} else if (!memberForm.getPassword().equals(request.getParameter("password").trim())) {
-			request.setAttribute("result", "ÃÜÂë´íÎó£¬ÇëÖØĞÂµÇÂ¼£¡£¡£¡");
+			request.setAttribute("result", "å¯†ç é”™è¯¯ï¼Œè¯·é‡æ–°ç™»å½•ï¼ï¼ï¼");
 		} else {	
 			request.setAttribute("memberForm", memberForm);
 		}
 		return mapping.findForward("checkMember");
 	}
 
-	// Ìí¼ÓÔ±¹¤ĞÅÏ¢
+	// æ·»åŠ å‘˜å·¥ä¿¡æ¯
 	public ActionForward insertMember(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {	
 		MemberForm memberForm=(MemberForm)form;
 		MemberForm formSelect=dao.selectMemberForm(memberForm.getName());
 		if (formSelect == null || formSelect.equals("")) {
 			dao.insertMember(memberForm);
-			request.setAttribute("success", "×¢²á³É¹¦");
+			request.setAttribute("success", "æ³¨å†ŒæˆåŠŸ");
 		} else {
-			request.setAttribute("success", "¸Ã»áÔ±Ãû³ÆÒÑ¾­´æÔÚ£¡£¡£¡");
+			request.setAttribute("success", "è¯¥ä¼šå‘˜åç§°å·²ç»å­˜åœ¨ï¼ï¼ï¼");
 		}
 		return mapping.findForward("operationMember");
 	}

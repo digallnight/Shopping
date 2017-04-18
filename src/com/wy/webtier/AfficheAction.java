@@ -7,7 +7,7 @@ import com.wy.dao.AfficheDao;
 import java.util.List;
 
 
-//¹«¸æĞÅÏ¢µÄAction
+//å…¬å‘Šä¿¡æ¯çš„Action
 public class AfficheAction
     extends Action {
   private AfficheDao dao = null;
@@ -20,36 +20,36 @@ public class AfficheAction
     this.action = Integer.parseInt(request.getParameter("action"));
     switch (action) {
       case 0: {
-        return afficheSelect(mapping, form, request, response); //¶Ô¹«¸æĞÅÏ¢È«²¿²éÑ¯¹¦ÄÜ
+        return afficheSelect(mapping, form, request, response); //å¯¹å…¬å‘Šä¿¡æ¯å…¨éƒ¨æŸ¥è¯¢åŠŸèƒ½
       }
       case 2: {
-        return afficheInsert(mapping, form, request, response); //Ìí¼Ó¹«¸æĞÅÏ¢
+        return afficheInsert(mapping, form, request, response); //æ·»åŠ å…¬å‘Šä¿¡æ¯
       }
       case 3: {
-        return afficheDelete(mapping, form, request, response); //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼şÉ¾³ı¹«¸æĞÅÏ¢
+        return afficheDelete(mapping, form, request, response); //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶åˆ é™¤å…¬å‘Šä¿¡æ¯
       }
       case 4: {
-        return afficheSelectOne(mapping, form, request, response); //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯¹«¸æĞÅÏ¢
+        return afficheSelectOne(mapping, form, request, response); //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢å…¬å‘Šä¿¡æ¯
       }
       case 5: {
-        return afficheUpdate(mapping, form, request, response); //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼şĞŞ¸Ä¹«¸æĞÅÏ¢
+        return afficheUpdate(mapping, form, request, response); //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶ä¿®æ”¹å…¬å‘Šä¿¡æ¯
       }
       case 6: {
-      return afficheContent(mapping, form, request, response);   //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯¹«¸æĞÅÏ¢µÄÄÚÈİ
+      return afficheContent(mapping, form, request, response);   //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢å…¬å‘Šä¿¡æ¯çš„å†…å®¹
     }
     }
     throw new java.lang.UnsupportedOperationException(
         "Method $execute() not yet implemented.");
   }
 
-  //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯¹«¸æĞÅÏ¢µÄÄÚÈİ
+  //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢å…¬å‘Šä¿¡æ¯çš„å†…å®¹
   public ActionForward afficheContent(ActionMapping mapping, ActionForm form,
                                        HttpServletRequest request,
                                        HttpServletResponse response){
    request.setAttribute("affiche",dao.selectOneAffiche(Integer.valueOf(request.getParameter("id"))));
    return mapping.findForward("afficheContent");
   }
-      //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯¹«¸æĞÅÏ¢
+      //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢å…¬å‘Šä¿¡æ¯
       public ActionForward afficheSelectOne(ActionMapping mapping,
                                             ActionForm form,
                                             HttpServletRequest request,
@@ -61,7 +61,7 @@ public class AfficheAction
     return mapping.findForward("afficheSelectOne");
   }
 
-  //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼şĞŞ¸Ä¹«¸æĞÅÏ¢
+  //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶ä¿®æ”¹å…¬å‘Šä¿¡æ¯
   public ActionForward afficheUpdate(ActionMapping mapping, ActionForm form,
                                      HttpServletRequest request,
                                      HttpServletResponse response) {
@@ -70,13 +70,13 @@ public class AfficheAction
     return afficheSelect(mapping, form, request, response);
   }
 
-  //¶Ô¹«¸æĞÅÏ¢µÄÈ«²¿²éÑ¯¹¦ÄÜ
+  //å¯¹å…¬å‘Šä¿¡æ¯çš„å…¨éƒ¨æŸ¥è¯¢åŠŸèƒ½
   public ActionForward afficheSelect(ActionMapping mapping, ActionForm form,
                                      HttpServletRequest request,
                                      HttpServletResponse response) {
     List list = dao.selectAffiche();
-    int pageNumber = list.size(); //¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-    int maxPage = pageNumber; //¼ÆËãÓĞ¶àÉÙÒ³Êı
+    int pageNumber = list.size(); //è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+    int maxPage = pageNumber; //è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
     String number = request.getParameter("i");
     if (maxPage % 7 == 0) {
       maxPage = maxPage / 7;
@@ -95,7 +95,7 @@ public class AfficheAction
   }
 
 
-  //Ìí¼Ó¹«¸æĞÅÏ¢
+  //æ·»åŠ å…¬å‘Šä¿¡æ¯
   public ActionForward afficheInsert(ActionMapping mapping, ActionForm form,
                                      HttpServletRequest request,
                                      HttpServletResponse response) {
@@ -104,7 +104,7 @@ public class AfficheAction
     return afficheSelect(mapping, form, request, response);
   }
 
-  //ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼şÉ¾³ı¹«¸æĞÅÏ¢
+  //ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶åˆ é™¤å…¬å‘Šä¿¡æ¯
   public ActionForward afficheDelete(ActionMapping mapping, ActionForm form,
                                      HttpServletRequest request,
                                      HttpServletResponse response) {

@@ -10,7 +10,7 @@ import com.wy.dao.ManagerDao;
 import java.util.*;
 
 
-//ºóÌ¨¹ÜÀíÔ±µÄAction
+//åå°ç®¡ç†å‘˜çš„Action
 public class ManagerAction
     extends Action {
   private ManagerDao dao = null;
@@ -25,26 +25,26 @@ public class ManagerAction
     action = Integer.parseInt(request.getParameter("action"));
     switch (action) {
       case 0: {
-        return managerCheck(mapping, form, request, response); //ÅĞ¶Ï¹ÜÀíÔ±µÇÂ¼ºóÌ¨
+        return managerCheck(mapping, form, request, response); //åˆ¤æ–­ç®¡ç†å‘˜ç™»å½•åå°
       }
       case 1: {
-        return managerSelect(mapping, form, request, response); //²éÑ¯ËùÓĞµÄ¹ÜÀíÔ±ĞÅÏ¢
+        return managerSelect(mapping, form, request, response); //æŸ¥è¯¢æ‰€æœ‰çš„ç®¡ç†å‘˜ä¿¡æ¯
       }
       case 3: {
-        return managerInsert(mapping, form, request, response); //Ìí¼Ó¹ÜÀíÔ±ĞÅÏ¢
+        return managerInsert(mapping, form, request, response); //æ·»åŠ ç®¡ç†å‘˜ä¿¡æ¯
       }
       case 4: {
-        return managerDelete(mapping, form, request, response); //É¾³ı¹ÜÀíÔ±ĞÅÏ¢
+        return managerDelete(mapping, form, request, response); //åˆ é™¤ç®¡ç†å‘˜ä¿¡æ¯
       }
       case 8: {
-        return managerUpdatePassword(mapping, form, request, response); //×ªÏòĞŞ¸ÄÃÜÂëµÄÒ³Ãæ
+        return managerUpdatePassword(mapping, form, request, response); //è½¬å‘ä¿®æ”¹å¯†ç çš„é¡µé¢
       }
     }
     throw new java.lang.UnsupportedOperationException(
         "Method $execute() not yet implemented.");
   }
 
-//ĞŞ¸Ä¹ÜÀíÔ±ÃÜÂë
+//ä¿®æ”¹ç®¡ç†å‘˜å¯†ç 
   public ActionForward managerUpdatePassword(ActionMapping mapping,
                                              ActionForm form,
                                              HttpServletRequest request,
@@ -53,7 +53,7 @@ public class ManagerAction
     managerForm.setAccount(request.getParameter("account"));
     managerForm.setPassword(request.getParameter("password"));
     dao.updateManagerPassword(managerForm);
-    request.setAttribute("reslut", "ĞŞ¸ÄºóÌ¨¹ÜÀíÔ±ÃÜÂë³É¹¦£¬ÇëÖØĞÂµÇÂ¼£¡£¡£¡");
+    request.setAttribute("reslut", "ä¿®æ”¹åå°ç®¡ç†å‘˜å¯†ç æˆåŠŸï¼Œè¯·é‡æ–°ç™»å½•ï¼ï¼ï¼");
     return mapping.findForward("managerUpdatePassword");
   }
 
@@ -62,17 +62,17 @@ public class ManagerAction
 
 
 
-  //É¾³ı¹ÜÀíÔ±ĞÅÏ¢
+  //åˆ é™¤ç®¡ç†å‘˜ä¿¡æ¯
   public ActionForward managerDelete(ActionMapping mapping,
                                      ActionForm form,
                                      HttpServletRequest request,
                                      HttpServletResponse response) {
     dao.deleteManager(Integer.valueOf(request.getParameter("id")));
-    request.setAttribute("reslut", "É¾³ı´ËÓÃ»§Ãû³É¹¦£¡£¡£¡");
+    request.setAttribute("reslut", "åˆ é™¤æ­¤ç”¨æˆ·åæˆåŠŸï¼ï¼ï¼");
     return managerSelect(mapping,form,request,response);
   }
 
-//Ìí¼Ó¹ÜÀíÔ±ĞÅÏ¢
+//æ·»åŠ ç®¡ç†å‘˜ä¿¡æ¯
   public ActionForward managerInsert(ActionMapping mapping,
                                      ActionForm form,
                                      HttpServletRequest request,
@@ -84,21 +84,21 @@ public class ManagerAction
        dao.insertManager(managerForm);
        return managerSelect(mapping,form,request,response);
     }else {
-      request.setAttribute("reslut", "´ËÓÃ»§ÃûÒÑ¾­´æÔÚ£¡£¡£¡");
+      request.setAttribute("reslut", "æ­¤ç”¨æˆ·åå·²ç»å­˜åœ¨ï¼ï¼ï¼");
       return mapping.findForward("managerInsert");
     }
   }
 
 
 
-//²éÑ¯ËùÓĞµÄ¹ÜÀíÔ±ĞÅÏ¢
+//æŸ¥è¯¢æ‰€æœ‰çš„ç®¡ç†å‘˜ä¿¡æ¯
   public ActionForward managerSelect(ActionMapping mapping,
                                      ActionForm form,
                                      HttpServletRequest request,
                                      HttpServletResponse response) {
     List list = dao.selectManager();
-    int pageNumber = list.size(); //¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-    int maxPage = pageNumber; //¼ÆËãÓĞ¶àÉÙÒ³Êı
+    int pageNumber = list.size(); //è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+    int maxPage = pageNumber; //è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
     String number = request.getParameter("i");
     if (maxPage % 7 == 0) {
       maxPage = maxPage / 7;
@@ -117,7 +117,7 @@ public class ManagerAction
     return mapping.findForward("managerSelect");
   }
 
-  //ÅĞ¶Ï¹ÜÀíÔ±µÇÂ¼ºóÌ¨
+  //åˆ¤æ–­ç®¡ç†å‘˜ç™»å½•åå°
   public ActionForward managerCheck(ActionMapping mapping,
                                     ActionForm form,
                                     HttpServletRequest request,
@@ -125,11 +125,11 @@ public class ManagerAction
     String account =request.getParameter("account");
     ManagerForm managerForm= dao.selectOne(account);
     if (managerForm == null) {
-      request.setAttribute("result", "ÄúÊäÈëµÄÕËºÅ²»´æÔÚ£¡£¡£¡");
+      request.setAttribute("result", "æ‚¨è¾“å…¥çš„è´¦å·ä¸å­˜åœ¨ï¼ï¼ï¼");
       return mapping.findForward("checkResult");
     }
     else if (!managerForm.getPassword().equals(request.getParameter("password"))) {
-      request.setAttribute("result", "ÄúÊäÈëµÄÃÜÂë²»´æÔÚ£¡£¡£¡");
+      request.setAttribute("result", "æ‚¨è¾“å…¥çš„å¯†ç ä¸å­˜åœ¨ï¼ï¼ï¼");
       return mapping.findForward("checkResult");
     } else {
       request.setAttribute("manager", managerForm);

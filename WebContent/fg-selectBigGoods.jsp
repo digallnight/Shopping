@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.GoodsForm" %>
@@ -9,9 +9,9 @@
 int number=Integer.parseInt((String)request.getAttribute("number"));
 int maxPage=Integer.parseInt((String)request.getAttribute("maxPage"));
 int pageNumber=Integer.parseInt((String)request.getAttribute("pageNumber"));
-int start=number*4;//¿ªÊ¼ÌõÊı
-int over=(number+1)*4;//½áÊøÌõÊı
-int count=pageNumber-over;//»¹Ê£¶àÉÙÌõ¼ÇÂ¼
+int start=number*4;//å¼€å§‹æ¡æ•°
+int over=(number+1)*4;//ç»“æŸæ¡æ•°
+int count=pageNumber-over;//è¿˜å‰©å¤šå°‘æ¡è®°å½•
 
 if(count<=0){
   over=pageNumber;
@@ -19,8 +19,8 @@ if(count<=0){
 %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>µç×ÓÉÌ³Ç</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç”µå­å•†åŸ</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css"> 
 <body>
@@ -28,13 +28,13 @@ if(count<=0){
 <table width="766" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="207" bgcolor="#F5F5F5">
-    <!--×ó²à01-->
+    <!--å·¦ä¾§01-->
     <jsp:include page="fg-left.jsp" flush="true"/></td>
     <td width="559" valign="top" bgcolor="#FFFFFF">
-    <!--ÓÒ²à01-->	
+    <!--å³ä¾§01-->	
 	<jsp:include page="fg-goodSorts.jsp" flush="true"/>	
 	
-<%if(bigList.size()==0){%><br><br><br><br>Ã»ÓĞÉÌÆ·µÄĞÅÏ¢<br><br><br><br><%}else{%>
+<%if(bigList.size()==0){%><br><br><br><br>æ²¡æœ‰å•†å“çš„ä¿¡æ¯<br><br><br><br><%}else{%>
            <%
               for(int i=start;i<over;i++){
               GoodsForm bigForm=(GoodsForm)bigList.get(i);
@@ -48,9 +48,9 @@ if(count<=0){
           <tr>
             <td height="30"><div align="center">
             <%if(bigForm.getMark().toString().equals("0")){%>
-              µ¥¼Û£º<%=bigForm.getNowPrice()%>Ôª
+              å•ä»·ï¼š<%=bigForm.getNowPrice()%>å…ƒ
             <%}else{%>
-             <font color="#FF0000"> ÌØ¼Û£º<%=bigForm.getFreePrice()%>Ôª</font>
+             <font color="#FF0000"> ç‰¹ä»·ï¼š<%=bigForm.getFreePrice()%>å…ƒ</font>
             <%}%>
             </div></td>
           </tr>
@@ -59,10 +59,10 @@ if(count<=0){
           </tr>
           <tr>
             <td height="30"> <div align="center">  <%if(session.getAttribute("form")!=null||session.getAttribute("id")!=null){%>
-              <a href="#" onClick="window.open('goodsAction.do?action=16&id=<%=bigForm.getId()%>','','width=500,height=200');">²é¿´ÏêÏ¸ÄÚÈİ</a>
+              <a href="#" onClick="window.open('goodsAction.do?action=16&id=<%=bigForm.getId()%>','','width=500,height=200');">æŸ¥çœ‹è¯¦ç»†å†…å®¹</a>
 				
 				    <%}else{%>
-				   µÇÂ¼ºó²ÅÄÜ¹ºÂò
+				   ç™»å½•åæ‰èƒ½è´­ä¹°
 			    
 				   <%}%>
 			    </div></td>
@@ -71,18 +71,18 @@ if(count<=0){
 		<%}}%><br>
         <table width="90%"  border="0" align="center" cellpadding="0" cellspacing="0">
           <tr align="center">
-            <td width="13%">¹²Îª<%=maxPage%>Ò³</td>
-            <td width="16%">¹²ÓĞ<%=pageNumber%>Ìõ¼ÇÂ¼</td>
-            <td width="14%">µ±Ç°ÎªµÚ<%=number+1%>Ò³</td>
+            <td width="13%">å…±ä¸º<%=maxPage%>é¡µ</td>
+            <td width="16%">å…±æœ‰<%=pageNumber%>æ¡è®°å½•</td>
+            <td width="14%">å½“å‰ä¸ºç¬¬<%=number+1%>é¡µ</td>
             <td width="19%"><%if((number+1)==1){%>
-      ÉÏÒ»Ò³
+      ä¸Šä¸€é¡µ
         <%}else{%>
-        <a href="goodsAction.do?action=12&big=<%=request.getParameter("big")%>&i=<%=number-1%>">ÉÏÒ»Ò³</a></td>
+        <a href="goodsAction.do?action=12&big=<%=request.getParameter("big")%>&i=<%=number-1%>">ä¸Šä¸€é¡µ</a></td>
             <%}%>
             <td width="18%"><%if(maxPage<=(number+1)){%>
-      ÏÂÒ»Ò³
+      ä¸‹ä¸€é¡µ
         <%}else{%>
-        <a href="goodsAction.do?action=12&big=<%=request.getParameter("big")%>&i=<%=number+1%>">ÏÂÒ»Ò³</a></td>
+        <a href="goodsAction.do?action=12&big=<%=request.getParameter("big")%>&i=<%=number+1%>">ä¸‹ä¸€é¡µ</a></td>
             <%}%>
            
           </tr>

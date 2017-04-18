@@ -14,7 +14,7 @@ import java.util.*;
 import java.io.UnsupportedEncodingException;
 
 
-//ÍøÕ¾Á¬½ÓµÄAction
+//ç½‘ç«™è¿æ¥çš„Action
 public class LinkAction
     extends Action {
   private LinkDao dao = null;
@@ -30,13 +30,13 @@ public class LinkAction
     dao = new LinkDao();
     switch (action) {
       case 0: {
-        return linkSelect(mapping, form, request, response); //¶ÔÁ¬½ÓÍøÕ¾µØÖ·ĞÅÏ¢µÄÈ«²¿²éÑ¯
+        return linkSelect(mapping, form, request, response); //å¯¹è¿æ¥ç½‘ç«™åœ°å€ä¿¡æ¯çš„å…¨éƒ¨æŸ¥è¯¢
       }   
       case 2: {
-       return linkInsert(mapping, form, request, response); //Ìí¼ÓÍøÕ¾ĞÅÏ¢
+       return linkInsert(mapping, form, request, response); //æ·»åŠ ç½‘ç«™ä¿¡æ¯
      }
        case 4: {
-           return linkDelete(mapping, form, request, response); //É¾³ıÍøÕ¾ĞÅÏ¢
+           return linkDelete(mapping, form, request, response); //åˆ é™¤ç½‘ç«™ä¿¡æ¯
      }
     }
     //  LinkForm linkForm = (LinkForm) form;
@@ -44,7 +44,7 @@ public class LinkAction
         "Method $execute() not yet implemented.");
   }
 
-  //É¾³ıÍøÕ¾ĞÅÏ¢
+  //åˆ é™¤ç½‘ç«™ä¿¡æ¯
   public ActionForward linkDelete(ActionMapping mapping,
                                             ActionForm form,
                                             HttpServletRequest request,
@@ -53,7 +53,7 @@ public class LinkAction
     return linkSelect(mapping, form, request, response);
 }
 
-    //Ìí¼ÓÍøÕ¾ĞÅÏ¢
+    //æ·»åŠ ç½‘ç«™ä¿¡æ¯
     public ActionForward linkInsert(ActionMapping mapping,
                                               ActionForm form,
                                               HttpServletRequest request,
@@ -65,13 +65,13 @@ public class LinkAction
 
 
 
-  //¶ÔÁ¬½ÓÍøÕ¾µØÖ·ĞÅÏ¢µÄÈ«²¿²éÑ¯
+  //å¯¹è¿æ¥ç½‘ç«™åœ°å€ä¿¡æ¯çš„å…¨éƒ¨æŸ¥è¯¢
   public ActionForward linkSelect(ActionMapping mapping, ActionForm form,
                                   HttpServletRequest request,
                                   HttpServletResponse response) {
     List list = dao.selectLink();
-    int pageNumber = list.size(); //¼ÆËã³öÓĞ¶àÉÙÌõ¼ÇÂ¼
-    int maxPage = pageNumber; //¼ÆËãÓĞ¶àÉÙÒ³Êı
+    int pageNumber = list.size(); //è®¡ç®—å‡ºæœ‰å¤šå°‘æ¡è®°å½•
+    int maxPage = pageNumber; //è®¡ç®—æœ‰å¤šå°‘é¡µæ•°
     String number = request.getParameter("i");
     if (maxPage % 7 == 0) {
       maxPage = maxPage / 7;

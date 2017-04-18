@@ -5,7 +5,7 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import javax.servlet.http.HttpServletRequest;
 
-//公告信息bean
+//鍏憡淇℃伅bean
 public class AfficheForm
     extends ActionForm {
   private String content = "";

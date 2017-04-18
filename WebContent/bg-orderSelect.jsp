@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.OrderForm"%>
@@ -7,16 +7,16 @@ List list=(List)request.getAttribute("list");
 int number=Integer.parseInt((String)request.getAttribute("number"));
 int maxPage=Integer.parseInt((String)request.getAttribute("maxPage"));
 int pageNumber=Integer.parseInt((String)request.getAttribute("pageNumber"));
-int start=number*6;//¿ªÊ¼ÌõÊı
-int over=(number+1)*6;//½áÊøÌõÊı
-int count=pageNumber-over;//»¹Ê£¶àÉÙÌõ¼ÇÂ¼
+int start=number*6;//å¼€å§‹æ¡æ•°
+int over=(number+1)*6;//ç»“æŸæ¡æ•°
+int count=pageNumber-over;//è¿˜å‰©å¤šå°‘æ¡è®°å½•
 if(count<=0){
   over=pageNumber;
   }
 %>
  <script Language="JavaScript">
  function deleteOrder(date) {
-  if(confirm("È·¶¨ÒªÉ¾³ıÂğ£¿")){
+  if(confirm("ç¡®å®šè¦åˆ é™¤å—ï¼Ÿ")){
     window.location="orderAction.do?action=2&number="+date;
 	}
   }
@@ -30,8 +30,8 @@ if(count<=0){
  
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>µç×ÓÉÌ³ÇµÄºóÌ¨</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç”µå­å•†åŸçš„åå°</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css">
 
@@ -49,18 +49,18 @@ if(count<=0){
 
 	<table width="610" height="25" border="0" cellpadding="0" cellspacing="0" background="image/bg_02.jpg">
       <tr>
-        <td><div align="center"><strong>¶©µ¥µÄ²éÑ¯</strong></div></td>
+        <td><div align="center"><strong>è®¢å•çš„æŸ¥è¯¢</strong></div></td>
       </tr>
     </table>	<br>
 	    <table width="96%"  border="1" cellpadding="1" cellspacing="1" bordercolor="#FFFFFF" bgcolor="CCCCCC">
 
 	    <tr bgcolor="#DCDCDC">
-          <td width="15%" height="25"><div align="center">±àºÅ</div></td>
-          <td width="14%"><div align="center">ÕæÊµĞÕÃû</div></td>
+          <td width="15%" height="25"><div align="center">ç¼–å·</div></td>
+          <td width="14%"><div align="center">çœŸå®å§“å</div></td>
 
-         <td width="16%"><div align="center">ÊÇ·ñ³ö»õ</div></td>
-        <td width="26%"><div align="center">¶©»õÊ±¼ä</div></td>
-   <td width="29%"><div align="center">²Ù×÷</div></td>
+         <td width="16%"><div align="center">æ˜¯å¦å‡ºè´§</div></td>
+        <td width="26%"><div align="center">è®¢è´§æ—¶é—´</div></td>
+   <td width="29%"><div align="center">æ“ä½œ</div></td>
         </tr>
         <%for(int i=start;i<over;i++){
       OrderForm form=(OrderForm)list.get(i);
@@ -70,45 +70,45 @@ if(count<=0){
           <td><%=form.getReallyName()%></td>
 
 		  <td><%if(form.getSign().equals("0")){%>
-                    <a href="orderAction.do?action=0&sign=<%=form.getSign()%>">·ñ</a>
+                    <a href="orderAction.do?action=0&sign=<%=form.getSign()%>">å¦</a>
                     <%}else{%>
-                    <a href="orderAction.do?action=0&sign=<%=form.getSign()%>">ÊÇ</a>
+                    <a href="orderAction.do?action=0&sign=<%=form.getSign()%>">æ˜¯</a>
           <%}%></td>
 		  <td><%=form.getCreaTime()%></td>
-        <td><a href="orderAction.do?action=3&number=<%=form.getNumber()%>">ÏêÏ¸ĞÅÏ¢</a>
+        <td><a href="orderAction.do?action=3&number=<%=form.getNumber()%>">è¯¦ç»†ä¿¡æ¯</a>
                              &nbsp;&nbsp;
 	     <%if(form.getSign().equals("1")){%>
-		 ÒÑ³ö
+		 å·²å‡º
 		 <%}else if(request.getParameter("sign")==null){%>
-		  <a href="orderAction.do?action=1&number=<%=form.getNumber()%>">³ö»õ</a>
+		  <a href="orderAction.do?action=1&number=<%=form.getNumber()%>">å‡ºè´§</a>
 		 <%}else{%>
-		  <a href="orderAction.do?action=1&sign=<%=request.getParameter("sign")%>&number=<%=form.getNumber()%>">³ö»õ</a>
+		  <a href="orderAction.do?action=1&sign=<%=request.getParameter("sign")%>&number=<%=form.getNumber()%>">å‡ºè´§</a>
 		 <%}%>
 		 &nbsp;&nbsp;
 
-		 <a href="javascript:deleteOrder('<%=form.getNumber()%>')">É¾³ı</a></td>
+		 <a href="javascript:deleteOrder('<%=form.getNumber()%>')">åˆ é™¤</a></td>
         </tr>
         <%}%>
       </table><br>
 <%if(request.getParameter("sign")==null){%>
   <table width="96%"  border="0" align="center" cellpadding="0" cellspacing="0">
     <tr align="center">
-    <td width="17%">¹²Îª<%=maxPage%>Ò³</td>
-    <td width="22%">¹²ÓĞ<%=pageNumber%>Ìõ¼ÇÂ¼</td>
-    <td width="26%">µ±Ç°ÎªµÚ<%=number+1%>Ò³</td>
-    <td width="19%"><%if((number+1)==1){%> ÉÏÒ»Ò³<%}else{%><a href="orderAction.do?action=0&i=<%=number-1%>">ÉÏÒ»Ò³</a></td><%}%>
-    <td width="16%"><%if(maxPage<=(number+1)){%>ÏÂÒ»Ò³<%}else{%><a href="orderAction.do?action=0&i=<%=number+1%>">ÏÂÒ»Ò³</a></td><%}%>
+    <td width="17%">å…±ä¸º<%=maxPage%>é¡µ</td>
+    <td width="22%">å…±æœ‰<%=pageNumber%>æ¡è®°å½•</td>
+    <td width="26%">å½“å‰ä¸ºç¬¬<%=number+1%>é¡µ</td>
+    <td width="19%"><%if((number+1)==1){%> ä¸Šä¸€é¡µ<%}else{%><a href="orderAction.do?action=0&i=<%=number-1%>">ä¸Šä¸€é¡µ</a></td><%}%>
+    <td width="16%"><%if(maxPage<=(number+1)){%>ä¸‹ä¸€é¡µ<%}else{%><a href="orderAction.do?action=0&i=<%=number+1%>">ä¸‹ä¸€é¡µ</a></td><%}%>
    </tr>
  </table>
 <%}else{%>
  <table width="96%"  border="0" align="center" cellpadding="0" cellspacing="0">
     <tr align="center">
-    <td width="14%">¹²Îª<%=maxPage%>Ò³</td>
-    <td width="18%">¹²ÓĞ<%=pageNumber%>Ìõ¼ÇÂ¼</td>
-    <td width="22%">µ±Ç°ÎªµÚ<%=number+1%>Ò³</td>
-    <td width="16%"><%if((number+1)==1){%> ÉÏÒ»Ò³<%}else{%><a href="orderAction.do?action=0&i=<%=number-1%>&sign=<%=request.getParameter("sign")%>">ÉÏÒ»Ò³</a></td><%}%>
-    <td width="12%"><%if(maxPage<=(number+1)){%>ÏÂÒ»Ò³<%}else{%><a href="orderAction.do?action=0&i=<%=number+1%>&sign=<%=request.getParameter("sign")%>">ÏÂÒ»Ò³</a></td><%}%>
-    <td width="18%"><a href="orderAction.do?action=0">·µ»Ø</a></td>
+    <td width="14%">å…±ä¸º<%=maxPage%>é¡µ</td>
+    <td width="18%">å…±æœ‰<%=pageNumber%>æ¡è®°å½•</td>
+    <td width="22%">å½“å‰ä¸ºç¬¬<%=number+1%>é¡µ</td>
+    <td width="16%"><%if((number+1)==1){%> ä¸Šä¸€é¡µ<%}else{%><a href="orderAction.do?action=0&i=<%=number-1%>&sign=<%=request.getParameter("sign")%>">ä¸Šä¸€é¡µ</a></td><%}%>
+    <td width="12%"><%if(maxPage<=(number+1)){%>ä¸‹ä¸€é¡µ<%}else{%><a href="orderAction.do?action=0&i=<%=number+1%>&sign=<%=request.getParameter("sign")%>">ä¸‹ä¸€é¡µ</a></td><%}%>
+    <td width="18%"><a href="orderAction.do?action=0">è¿”å›</a></td>
    </tr>
  </table>
 

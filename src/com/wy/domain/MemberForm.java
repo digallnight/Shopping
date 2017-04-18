@@ -2,25 +2,25 @@ package com.wy.domain;
 
 import org.apache.struts.action.ActionForm;
 
-//»áÔ±±íµÄbean
+//ä¼šå‘˜è¡¨çš„bean
 public class MemberForm extends ActionForm {
-	private Integer age = 1; // ÄêÁä
+	private Integer age = 1; // å¹´é¾„
 
-	private String email = ""; // µç×ÓÓÊ¼ş
+	private String email = ""; // ç”µå­é‚®ä»¶
 
-	private Integer id = 1; // Êı¾İ¿âÁ÷Ë®ºÅ
+	private Integer id = 1; // æ•°æ®åº“æµæ°´å·
 
-	private String name = ""; // »áÔ±Ãû³Æ
+	private String name = ""; // ä¼šå‘˜åç§°
 
-	private String password = ""; // »áÔ±ÃÜÂë
+	private String password = ""; // ä¼šå‘˜å¯†ç 
 
-	private String profession = ""; // »áÔ±Ö°Òµ
+	private String profession = ""; // ä¼šå‘˜èŒä¸š
 
-	private String question = ""; // ÕÒ»ØÃÜÂëµÄÎÊÌâ
+	private String question = ""; // æ‰¾å›å¯†ç çš„é—®é¢˜
 
-	private String reallyName = ""; // ÕæÊµĞÕÃû
+	private String reallyName = ""; // çœŸå®å§“å
 
-	private String result = ""; // ÕÒ»ØÃÜÂëµÄ´ğ°¸
+	private String result = ""; // æ‰¾å›å¯†ç çš„ç­”æ¡ˆ
 
 	public MemberForm() {
 	}

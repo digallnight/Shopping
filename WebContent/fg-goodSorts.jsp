@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
 <%@page import="com.wy.domain.BigTypeForm"%>
 <jsp:useBean id="big" scope="page" class="com.wy.dao.BigTypeDao"/>
 <%List bigList=(List)big.selectBig();%>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <table  height="25"  border="0" cellpadding="0" cellspacing="0" align="center">
    <tr>
      <td  align="center">

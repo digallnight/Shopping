@@ -5,14 +5,14 @@ import java.sql.*;
 import java.util.*;
 import com.wy.domain.OrderDetailForm;
 
-//¶©»õÃ÷Ï¸±íµÄ²Ù×÷
+//è®¢è´§æ˜ç»†è¡¨çš„æ“ä½œ
 public class OrderDetailDao {
-  private Connection connection = null; //¶¨ÒåÁ¬½ÓµÄ¶ÔÏó
-  private PreparedStatement ps = null; //¶¨ÒåÔ¤×¼±¸µÄ¶ÔÏó
-  private JDBConnection jdbc = null; //¶¨ÒåÊı¾İ¿âÁ¬½Ó¶ÔÏó
+  private Connection connection = null; //å®šä¹‰è¿æ¥çš„å¯¹è±¡
+  private PreparedStatement ps = null; //å®šä¹‰é¢„å‡†å¤‡çš„å¯¹è±¡
+  private JDBConnection jdbc = null; //å®šä¹‰æ•°æ®åº“è¿æ¥å¯¹è±¡
   public OrderDetailDao() {
     jdbc = new JDBConnection();
-    connection = jdbc.connection; //ÀûÓÃ¹¹Ôì·½·¨È¡µÃÊı¾İ¿âÁ¬½Ó
+    connection = jdbc.connection; //åˆ©ç”¨æ„é€ æ–¹æ³•å–å¾—æ•°æ®åº“è¿æ¥
   }
 public List selectOrderDetailNumber(String number){
   List list =new ArrayList();
@@ -38,7 +38,7 @@ public List selectOrderDetailNumber(String number){
 }
 
 
-//Ìí¼ÓµÄ·½·¨
+//æ·»åŠ çš„æ–¹æ³•
   public void insertOrderDetail(OrderDetailForm form) {
     try {
       ps = connection.prepareStatement("insert into tb_orderDetail values (null,?,?,?,?)");
@@ -54,7 +54,7 @@ public List selectOrderDetailNumber(String number){
     }
   }
 
-  //É¾³ı×Ó±íµÄ²Ù×÷
+  //åˆ é™¤å­è¡¨çš„æ“ä½œ
   public void deleteOrderDetail(String number){
     try {
       ps = connection.prepareStatement("delete from tb_orderDetail where orderNumber=?");

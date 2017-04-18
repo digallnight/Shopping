@@ -1,15 +1,15 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>电子商城</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>鐢靛瓙鍟嗗煄</title>
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css"> 
 <%@page import="com.wy.domain.MemberForm"%>
 <jsp:useBean id="dao" scope="page" class="com.wy.dao.MemberDao"/>
 <%
-request.setCharacterEncoding("gb2312");
+request.setCharacterEncoding("utf-8");
 String password=request.getParameter("password").trim();
 Integer id=Integer.valueOf(request.getParameter("id"));
 boolean change=dao.updatePassword(password,id);
@@ -28,9 +28,9 @@ boolean change=dao.updatePassword(password,id);
   
    <p><strong>
     <%if(change){%>
-    密码修改成功！！！
+    瀵嗙爜淇敼鎴愬姛锛侊紒锛�
   <%}else{%>
-    密码修改失败！！！
+    瀵嗙爜淇敼澶辫触锛侊紒锛�
   <%}%>
   </strong></p>
 <meta http-equiv="refresh" content="3;URL=index.jsp">

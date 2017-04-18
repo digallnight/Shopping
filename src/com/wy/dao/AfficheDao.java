@@ -6,17 +6,17 @@ import java.util.*;
 import com.wy.tool.JDBConnection;
 import com.wy.domain.AfficheForm;
 
-//¶Ô¹«¸æĞÅÏ¢µÄ²Ù×÷
+//å¯¹å…¬å‘Šä¿¡æ¯çš„æ“ä½œ
 public class AfficheDao {
-  private Connection connection = null; //¶¨ÒåÁ¬½ÓµÄ¶ÔÏó
-  private PreparedStatement ps = null; //¶¨ÒåÔ¤×¼±¸µÄ¶ÔÏó
-  private JDBConnection jdbc = null; //¶¨ÒåÊı¾İ¿âÁ¬½Ó¶ÔÏó
+  private Connection connection = null; //å®šä¹‰è¿æ¥çš„å¯¹è±¡
+  private PreparedStatement ps = null; //å®šä¹‰é¢„å‡†å¤‡çš„å¯¹è±¡
+  private JDBConnection jdbc = null; //å®šä¹‰æ•°æ®åº“è¿æ¥å¯¹è±¡
   public AfficheDao() {
     jdbc = new JDBConnection();
-    connection = jdbc.connection; //ÀûÓÃ¹¹Ôì·½·¨È¡µÃÊı¾İ¿âÁ¬½Ó
+    connection = jdbc.connection; //åˆ©ç”¨æ„é€ æ–¹æ³•å–å¾—æ•°æ®åº“è¿æ¥
   }
 
-  //É¾³ıµÄ·½·¨
+  //åˆ é™¤çš„æ–¹æ³•
   public void deleteAffiche(Integer id) {
     try {
       ps = connection.prepareStatement("delete from tb_affiche where id=?");
@@ -29,7 +29,7 @@ public class AfficheDao {
     }
   }
 
-  //ĞŞ¸ÄµÄ·½·¨
+  //ä¿®æ”¹çš„æ–¹æ³•
   public void updateAffiche(AfficheForm form) {
     try {
       ps = connection.prepareStatement("update tb_affiche set name=?,content=? where id=?");
@@ -44,7 +44,7 @@ public class AfficheDao {
     }
   }
 
-//Ìí¼ÓµÄ·½·¨
+//æ·»åŠ çš„æ–¹æ³•
   public void insertAffiche(AfficheForm form) {
     try {
       ps = connection.prepareStatement("insert into tb_affiche values (null,?,?,now())");
@@ -58,7 +58,7 @@ public class AfficheDao {
     }
   }
 
-//ÒÔÊı¾İ¿âÁ÷Ë®ºÅÎªÌõ¼ş²éÑ¯ĞÅÏ¢
+//ä»¥æ•°æ®åº“æµæ°´å·ä¸ºæ¡ä»¶æŸ¥è¯¢ä¿¡æ¯
   public AfficheForm selectOneAffiche(Integer id) {
     AfficheForm affiche = null;
     try {
@@ -79,7 +79,7 @@ public class AfficheDao {
     return affiche;
   }
 
-//È«²¿²éÑ¯µÄ·½·¨
+//å…¨éƒ¨æŸ¥è¯¢çš„æ–¹æ³•
   public List selectAffiche() {
     List list = new ArrayList();
     AfficheForm affiche = null;
